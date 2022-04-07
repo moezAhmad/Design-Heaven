@@ -1,8 +1,9 @@
 .btn_3{
-    border-radius: 300rem;
+    border-radius: 100rem;
     background-color: $color-primary;
     color: $color-secondary;
-    font-size: 4rem !important; 
+    font-size: 4rem; 
+    padding: 1.5rem 3rem;
     &:hover{
         box-shadow: 0 1rem 2rem rgba($color-black,0.2);
         transform: translateY(-.2rem);

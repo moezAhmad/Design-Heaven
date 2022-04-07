@@ -1,8 +1,10 @@
 
 .btn_2{
     border-radius: 1rem;
+    font-size: 2rem;
     border-bottom: .2rem solid $color-primary;
     border-top: .2rem solid $color-primary;
+    padding: 1.5rem 4rem;
     &--primary{
         color: $color-primary;
         font-weight: 600;

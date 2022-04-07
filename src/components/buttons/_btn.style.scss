@@ -1,12 +1,9 @@
 .btn{
     &:link,
     &:visited{
-        text-decoration: none;
-        text-transform: uppercase;
-        padding: 1.5rem 4rem; 
+        text-decoration: none; 
         display: inline-block;
         transition: all .4s;
-        position: relative;
-        font-size: 2rem; 
+        position: relative; 
     }
 }
