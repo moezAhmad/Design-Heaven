@@ -1,0 +1,18 @@
+.btn_3{
+    border-radius: 300rem;
+    background-color: $color-primary;
+    color: $color-secondary;
+    font-size: 4rem !important; 
+    &:hover{
+        box-shadow: 0 1rem 2rem rgba($color-black,0.2);
+        transform: translateY(-.2rem);
+        
+    }
+    &:active{
+        box-shadow: 0 .5rem 1rem rgba($color-black,0.2);
+        transform: translateY(-.1rem);
+    }
+    &--down{
+
+    }
+}

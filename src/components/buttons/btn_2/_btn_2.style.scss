@@ -1,0 +1,25 @@
+
+.btn_2{
+    border-radius: 1rem;
+    border-bottom: .2rem solid $color-primary;
+    border-top: .2rem solid $color-primary;
+    &--primary{
+        color: $color-primary;
+        font-weight: 600;
+    }
+    &:hover{
+        background-color: $color-primary;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black,0.2);
+        transform: translateY(-.2rem);
+        
+    }
+    &:active{
+        box-shadow: 0 .5rem 1rem rgba($color-black,0.2);
+        transform: translateY(-.1rem);
+    }
+    &--animated{
+        animation: fade_in .4s ease-in .75s ;
+        animation-fill-mode: backwards;
+    }
+}

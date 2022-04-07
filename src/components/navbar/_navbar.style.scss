@@ -1,0 +1,41 @@
+.nav{
+    @include clear-fix;
+    max-width: 160rem;
+    margin: 0rem auto;
+    padding: 2rem 3rem;
+    &__items{
+        display: flex;
+        &--left{
+            float: left;
+        }
+        &--right{
+            float: right;
+        }    
+    }
+    
+    &--item{
+        &:link,
+        &:visited{
+            color: $color-white;
+            padding: 1.5rem 4rem;  
+            border-radius: 10rem;
+        }
+    &:hover{
+        box-shadow: 0 1rem 2rem  rgba($color-black,.2);
+        transform: translateY(-3px);
+        
+    }
+}
+    
+    &--logo{
+        background-color: $color-white;
+        border-radius: 50rem;
+        display: inline-block;
+        width: 4rem;
+        height: 4rem;
+        align-self: center;
+        margin-left: 2rem;
+    }
+
+   
+}
