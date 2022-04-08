@@ -1,6 +1,7 @@
 import React from "react";
 import { Navbar } from "../../../components/navbar/navbar.component";
 import { TextBox } from "../../../components/textbox/TextBox.component";
+import { Btn_3 } from "../../../components/buttons/btn_3/btn_3.component";
 import "../../../App.scss"
 
 const navItems = {
@@ -43,11 +44,14 @@ const navItems = {
     }
 }
 
-export const LandingHeader = () => {
-    return (
-        <div className="landing__header">
-            <Navbar navItems={navItems} />
-            <TextBox />
-        </div>
-    )
+export class LandingHeader extends React.Component {
+    render(){
+        return (
+            <div className="landing__header">
+                <Navbar navItems={navItems} />
+                <TextBox />
+                <Btn_3 text = "&#8595;"/>
+            </div>
+        )
+    }
 }

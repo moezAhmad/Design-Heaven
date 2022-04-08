@@ -3,7 +3,7 @@
     max-width: 180rem;
     margin: 0rem auto;
     padding: 2rem 3rem;
-    font-size: 2rem;
+    font-size: $default-font-size;
 
     &__items {
         display: flex;

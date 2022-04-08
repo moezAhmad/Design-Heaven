@@ -1,7 +1,7 @@
 
 .btn_1{
     border-radius: 10rem;
-    font-size: 2rem;
+    font-size: $default-font-size;
     padding: 1.5rem 4rem;
     &:hover{
         box-shadow: 0 1rem 2rem  rgba($color-black,.2);
