@@ -12,7 +12,6 @@ export const TextBox = () => {
             <HeadingPrimary mainText = "Get your dream" subText = "design job done"/>
             <Btn_1 text = "Hire a designer"/>
             <Btn_2 text = "Apply as a designer"/>
-            
         </div>
     )
 }
