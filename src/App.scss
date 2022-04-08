@@ -7,13 +7,17 @@
 
 @import "./components/navbar/navbar.style";
 @import "./components/textbox/textbox.style";
-@import "./components/heading-primary/heading-primary.stylr.scss";
-@import "./components/buttons/btn_1/btn_1.style.scss";
+@import "./components/heading-primary/heading-primary.style";
+@import "./components/buttons/btn_1/btn_1.style";
 @import "./components/buttons/btn_2/btn_2.style";
 @import "./components/buttons/btn.style";
-@import "./components/buttons/btn_3/btn_3.style.scss";
+@import "./components/buttons/btn_3/btn_3.style";
+@import "./components/heading-secondary/heading-secondary.style";
+@import "./components/card-list/card-list.style";
+@import "./components/card/card.style";
 
 
-@import "./layouts/landing_page/header.style";
+@import "./layouts/landing_page/header/header.style";
+@import "./layouts/landing_page/past_designs/past_designs.style.scss";
 
 @import "./pages/landing.style";

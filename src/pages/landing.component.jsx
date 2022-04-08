@@ -1,6 +1,7 @@
 import React from "react";
 import '../App.scss'
-import { LandingHeader } from "../layouts/landing_page/header.component";
+import { LandingHeader } from "../layouts/landing_page/header/header.component";
+import { PastDesigns } from "../layouts/landing_page/past_designs/past_designs.component";
 export class LandingPage extends React.Component{
     constructor (){
         super()
@@ -9,6 +10,7 @@ export class LandingPage extends React.Component{
         return(
             <div>
                 <LandingHeader/>
+                <PastDesigns/>
             </div>
         )
     }

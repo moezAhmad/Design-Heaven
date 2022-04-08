@@ -3,6 +3,6 @@ import "../../../App.scss"
 
 export const Btn_3 = ({text})=>{
     return(
-        <a className="btn btn_3 btn_3--down btn_2--animated" href="#">{text}</a>
+        <a className="btn btn_3 btn_3--down btn_2--animated u-pos-bottom-right" href="#">{text}</a>
     )
 }
