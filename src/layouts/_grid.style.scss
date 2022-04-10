@@ -9,6 +9,7 @@
 
     [class^="col-"]{//Attribute selector ^ lets us select all classes starting from col-  * lets us any class that contains col-   & lets us any class that ends with col-
         float: left;
+        text-align: left;
         &:not(:last-child){
             margin-right: $gutter-horizontal;
         }

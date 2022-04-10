@@ -2,23 +2,19 @@
 .btn_2{
     border-radius: 1rem;
     font-size: $default-font-size;
-    border-bottom: .2rem solid $color-primary;
-    border-top: .2rem solid $color-primary;
     padding: 1.5rem 4rem;
     &--primary{
-        color: $color-primary;
-        font-weight: 600;
+        color: $color-white;
+        font-weight: 500;
     }
     &:hover{
-        background-color: $color-primary;
-        color: $color-white;
-        box-shadow: 0 1rem 2rem rgba($color-black,0.2);
-        transform: translateY(-.2rem);
+        color: $color-black;
+        
+        
         
     }
     &:active{
-        box-shadow: 0 .5rem 1rem rgba($color-black,0.2);
-        transform: translateY(-.1rem);
+        
     }
     &--animated{
         animation: fade_in .4s ease-in .75s ;

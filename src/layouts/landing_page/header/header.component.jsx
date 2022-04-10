@@ -50,7 +50,6 @@ export class LandingHeader extends React.Component {
             <div className="landing__header">
                 <Navbar navItems={navItems} />
                 <TextBox />
-                <Btn_3 text = "&#8595;"/>
             </div>
         )
     }

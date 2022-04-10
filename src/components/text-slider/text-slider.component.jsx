@@ -15,7 +15,7 @@ export const TextSlider = ({ testimonials }) => {
                 showThumbs={false}
                 showStatus={false}
                 autoPlay={true}
-                interval={31000}
+                interval={3100}
             >
                 {testimonials.map((testimoial) => {
                     return <SliderContent testimonial={testimoial} key={testimoial.id}/>

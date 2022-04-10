@@ -3,9 +3,9 @@ import "../../App.scss"
 
 export const HeadingSecondary = ({ text, modifier}) => {
     return (
-        <div className="u-center-text u-margin-bottom-big">
+        <div className="testimonials-past-format">
             <h2 className={`heading-secondary heading-secondary--`+modifier}>
-                {text.toUpperCase()}
+                {text}
             </h2>
         </div>
     )
