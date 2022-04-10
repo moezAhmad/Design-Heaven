@@ -15,10 +15,14 @@
 @import "./components/heading-secondary/heading-secondary.style";
 @import "./components/card-list/card-list.style";
 @import "./components/card/card.style";
+@import "./components/text-slider/text-slider.style";
+@import "./components/text-slider/slider-contents/slider-content.style";
 
-
+@import "./layouts/landing_page/testimonials/testimonial.style";
 @import "./layouts/landing_page/header/header.style";
 @import "./layouts/landing_page/footer/footer.style";
 @import "./layouts/landing_page/past_designs/past_designs.style.scss";
+@import "./layouts/landing_page/past_designs/past_designs.style";
+@import "./layouts/grid.style";
 
 @import "./pages/landing.style";
