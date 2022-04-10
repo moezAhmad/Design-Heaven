@@ -48,53 +48,40 @@ export class LandingFooter extends React.Component {
   render() {
     return (
       <>
-        <div style={{ height: "15px", backgroundColor: "#f4f4f4" }}></div>
-
         <div className=" landing__footer">
-          <div className="Outer_div">
-            <div className="first_column">
-              <ul>
-                <li className="bold_font">DesignHeaven</li>
-                <li>About Us</li>
-                <li>Testimonals</li>
-                <li>FAQS</li>
-                <li>Contact</li>
-              </ul>
-            </div>
 
-            <div className="other_column">
-              <ul>
-                <li className="bold_font">Competition </li>
-                <li>Start Competition</li>
-                <li>Current Competitions</li>
-                <li>Previous Competition </li>
-                <li>How it works?</li>
-              </ul>
+          <div className="row">
+            <div class="col-1-of-4">
+              <p className="bold_font u-padding-min">DesignHeaven</p>
+              <p className="u-padding-min">About Us</p>
+              <p className="u-padding-min">Testimonals</p>
+              <p className="u-padding-min">FAQS</p>
+              <p className="u-padding-min">Contact</p>
             </div>
-
-            <div className="other_column">
-              <ul>
-                <li className="bold_font">Designer </li>
-                <li>Apply</li>
-                <li>Contact Us</li>
-                <li>&nbsp;</li>
-                <li>&nbsp;</li>
-              
-              </ul>
+            <div class="col-1-of-4">
+              <p className="bold_font u-padding-min">Competition </p>
+              <p className="u-padding-min">Start Competition</p>
+              <p className="u-padding-min">Current Competitions</p>
+              <p className="u-padding-min">Previous Competition </p>
+              <p className="u-padding-min">How it works?</p>
             </div>
-
-            <div className="other_column">
-              <ul>
-                <li className="bold_font">Report</li>
-                <li>File a complaint</li>
-                <li>&nbsp;</li>
-                <li>&nbsp;</li>
-                <li>&nbsp;</li>
-              
-              </ul>
+            <div class="col-1-of-4">
+              <p className="bold_font u-padding-min">Designer </p>
+              <p className="u-padding-min">Apply</p>
+              <p className="u-padding-min">Contact Us</p>
+              <p className="u-padding-min">&nbsp;</p>
+              <p className="u-padding-min">&nbsp;</p>
+            </div>
+            <div class="col-1-of-4">
+              <p className="bold_font u-padding-min">Report</p>
+              <p className="u-padding-min">File a complaint</p>
+              <p className="u-padding-min">&nbsp;</p>
+              <p className="u-padding-min">&nbsp;</p>
+              <p className="u-padding-min">&nbsp;</p>
             </div>
           </div>
-          <hr className="line1"/>
+
+          <hr className="line1" />
 
           <div className="social_media">
             <p class="gray-filter" style={{ fontSize: "1px" }}>
