@@ -64,6 +64,10 @@ export class Testimoials extends React.Component{
             <div className="landing__testimonials">
                 <HeadingSecondary text="Testimonials" modifier="black"/>
                 <TextSlider testimonials = {this.state.testimonials}/>
+                <img  alt="circle" className="landing__testimonials__circle landing__testimonials__images" />
+                <img  alt="sphere" className="landing__testimonials__sphere landing__testimonials__images" />
+                <img  alt="triangle" className="landing__testimonials__triangle landing__testimonials__images" />
+                <img  alt="square" className="landing__testimonials__square landing__testimonials__images" />
             </div>
         )
     }
