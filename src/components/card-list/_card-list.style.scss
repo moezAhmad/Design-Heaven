@@ -4,4 +4,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 20px;
+    &:hover .card:not(:hover){
+        -webkit-filter: brightness(.3) ;
+        filter: brightness(.3) ;
+    }
 }
