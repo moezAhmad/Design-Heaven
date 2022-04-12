@@ -1,4 +1,31 @@
 .landing__testimonials{
     background-color: $color-white;
     padding: 7rem 0;
+    position: relative;
+    &__images{
+        position: absolute;
+        object-fit: cover;
+        object-position: center;
+        height: 20%;
+    }
+    &__circle{
+        content: url("../../../abstracts/images/Circle_01.png");
+        bottom: 10%;
+        left: 15%;
+    }
+    &__square{
+        content: url("../../../abstracts/images/Square_01.png");
+        top: 10%;
+        right: 10%;
+    }
+    &__sphere{
+        content: url("../../../abstracts/images/Sphere_3Axis.png");
+        top: 25%;
+        left: 6%;
+    }
+    &__triangle{
+        content: url("../../../abstracts/images/Triangle_01.png");
+        bottom: 13%;
+        right: 5%;
+    }
 }

@@ -10,11 +10,11 @@ export const TextSlider = ({ testimonials }) => {
 
         <div className="text-slider">
             <Carousel
-                showArrows={true}
+                showArrows={false}
                 infiniteLoop={true}
                 showThumbs={false}
                 showStatus={false}
-                autoPlay={true}
+                autoPlay={false}
                 interval={3100}
             >
                 {testimonials.map((testimoial) => {

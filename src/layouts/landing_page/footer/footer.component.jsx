@@ -51,28 +51,28 @@ export class LandingFooter extends React.Component {
         <div className=" landing__footer">
 
           <div className="row">
-            <div class="col-1-of-4">
+            <div className="col-1-of-4">
               <p className="bold_font u-padding-min">DesignHeaven</p>
               <p className="u-padding-min">About Us</p>
               <p className="u-padding-min">Testimonals</p>
               <p className="u-padding-min">FAQS</p>
               <p className="u-padding-min">Contact</p>
             </div>
-            <div class="col-1-of-4">
+            <div className="col-1-of-4">
               <p className="bold_font u-padding-min">Competition </p>
               <p className="u-padding-min">Start Competition</p>
               <p className="u-padding-min">Current Competitions</p>
               <p className="u-padding-min">Previous Competition </p>
               <p className="u-padding-min">How it works?</p>
             </div>
-            <div class="col-1-of-4">
+            <div className="col-1-of-4">
               <p className="bold_font u-padding-min">Designer </p>
               <p className="u-padding-min">Apply</p>
               <p className="u-padding-min">Contact Us</p>
               <p className="u-padding-min">&nbsp;</p>
               <p className="u-padding-min">&nbsp;</p>
             </div>
-            <div class="col-1-of-4">
+            <div className="col-1-of-4">
               <p className="bold_font u-padding-min">Report</p>
               <p className="u-padding-min">File a complaint</p>
               <p className="u-padding-min">&nbsp;</p>
@@ -84,7 +84,7 @@ export class LandingFooter extends React.Component {
           <hr className="line1" />
 
           <div className="social_media">
-            <p class="gray-filter" style={{ fontSize: "1px" }}>
+            <p className="gray-filter" style={{ fontSize: "1px" }}>
               <larger>© DesignHeaven</larger> &nbsp; &nbsp;
             </p>
             <div className="social_media_div">
