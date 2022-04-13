@@ -5,44 +5,6 @@ import image2 from "./Assets/image2.svg";
 import image3 from "./Assets/image3.svg";
 import image4 from "./Assets/image4.svg";
 
-const navItems = {
-  navItemsLeft: [
-    {
-      id: 1,
-      text: "About",
-      to: "/about",
-    },
-    {
-      id: 2,
-      text: "FAQs",
-      to: "/faqs",
-    },
-    {
-      id: 3,
-      text: "Hire",
-      to: "/hire",
-    },
-    {
-      id: 4,
-      text: "Apply",
-      to: "/apply",
-    },
-  ],
-  navItemsRight: {
-    text: [
-      {
-        id: 1,
-        text: "Help Center",
-        to: "help_center",
-      },
-    ],
-    logo: {
-      id: 2,
-      text: "g",
-      to: "/",
-    },
-  },
-};
 
 export class LandingFooter extends React.Component {
   render() {
@@ -84,9 +46,9 @@ export class LandingFooter extends React.Component {
           <hr className="line1" />
 
           <div className="social_media">
-            <p className="gray-filter" style={{ fontSize: "1px" }}>
+            {/* <p className="gray-filter" style={{ fontSize: "1px" }}>
               <larger>© DesignHeaven</larger> &nbsp; &nbsp;
-            </p>
+            </p> */}
             <div className="social_media_div">
               <img
                 src={image2}
