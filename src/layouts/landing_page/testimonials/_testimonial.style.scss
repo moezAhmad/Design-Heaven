@@ -1,7 +1,12 @@
 .landing__testimonials{
     background-color: $color-white;
     padding: 7rem 0;
-    position: relative;
+    
+    &__text-slider{
+        max-width: 90rem;
+        position: relative;
+        margin: 0 auto;
+    }
     &__images{
         position: absolute;
         object-fit: cover;
@@ -20,7 +25,7 @@
     }
     &__sphere{
         content: url("../../../abstracts/images/Sphere_3Axis.png");
-        top: 30%;
+        top: 5%;
         left:10%;
     }
     &__triangle{
