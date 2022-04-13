@@ -14,7 +14,7 @@ export const TextSlider = ({ testimonials }) => {
                 infiniteLoop={true}
                 showThumbs={false}
                 showStatus={false}
-                autoPlay={false}
+                autoPlay={true}
                 interval={3100}
             >
                 {testimonials.map((testimoial) => {
