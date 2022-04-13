@@ -62,7 +62,7 @@ export class Testimoials extends React.Component {
   render() {
     return (
       <div className="landing__testimonials">
-        <HeadingSecondary text="Testimonials" modifier="black" />
+        <HeadingSecondary text="Testimonials" modifier="black" position = "testimonials-past-format"/>
         <div className="landing__testimonials__text-slider">
           <TextSlider testimonials={this.state.testimonials} />
           <img alt="circle" className="landing__testimonials__circle landing__testimonials__images" />

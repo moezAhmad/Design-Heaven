@@ -24,7 +24,7 @@ export class PastDesigns extends React.Component {
     render() {
         return (
             <div className="landing__past_designs">
-                <HeadingSecondary text="Past Winning Designs" modifier = "white"/>
+                <HeadingSecondary text="Past Winning Designs" modifier = "white" position="testimonials-past-format"/>
                 <CardList designs={this.state.designs}/>
             </div>
 
