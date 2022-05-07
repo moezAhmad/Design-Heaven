@@ -17,6 +17,8 @@
 @import "./components/card/card.style";
 @import "./components/text-slider/text-slider.style";
 @import "./components/text-slider/slider-contents/slider-content.style";
+@import "./components/TextFields/textfield.style";
+@import "./layouts/Accounts/Social_login_bttn.style";
 
 @import "./layouts/landing_page/testimonials/testimonial.style";
 @import "./layouts/landing_page/header/header.style";
@@ -26,3 +28,6 @@
 @import "./layouts/grid.style";
 
 @import "./pages/landing.style";
+
+@import "./layouts/Accounts/login.style";
+@import "./layouts/Accounts/signup.style";
