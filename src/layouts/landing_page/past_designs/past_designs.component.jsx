@@ -3,9 +3,6 @@ import "../../../App.scss"
 import { CardList } from "../../../components/card-list/card-list.component";
 import { HeadingSecondary } from "../../../components/heading-secondary/heading-secondary.component";
 
-
-
-
 export class PastDesigns extends React.Component {
     constructor() {
         super();

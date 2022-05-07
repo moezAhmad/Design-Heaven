@@ -39,7 +39,7 @@ const navItems = {
         logo: {
             id: 2,
             text: 'g',
-            to: '/'
+            to: '/account'
         }
     }
 }
