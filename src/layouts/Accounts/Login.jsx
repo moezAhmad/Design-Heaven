@@ -2,6 +2,9 @@ import React from "react";
 import { useState } from "react";
 import "../../App.scss";
 
+import { useLogin } from "../../Hooks/useLogin";
+
+
 import google_photo from "./img/Google__G__Logo.svg"
 import facebook_photo from "./img/facebook-new.png"
 import { Textlabel_1 } from "../../components/TextFields/textfield.component"
@@ -13,12 +16,12 @@ export default function LoginPage() {
   const [email, setemail] = useState('');
   const [password, setpassword] = useState('');
 
+  const { login, error, isPending } = useLogin() 
+
   const handleOnClick = () => { alert("clicked") }
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    alert("done")
-    console.log(email,password)
+    login(email , password)
   }
 
   // console.log(email,password)
@@ -29,7 +32,11 @@ export default function LoginPage() {
       <Textlabel_1 state={email} setState={setemail} texttype='email' innertext='Email' />
       <Textlabel_1 state={password} setState={setpassword} texttype='password' innertext='Password' />
 
-      <button className="SignandLogin_butt " onClick={handleSubmit}>Login </button>
+
+      { !isPending && <button className="SignandLogin_butt " onClick={handleSubmit}>Login </button>}
+      { isPending && <button className="SignandLogin_butt" disabled>Loading</button> }
+      { error && <p className="Error-login">{error}</p> } 
+
       &nbsp;
       <h3>OR</h3>
       <hr />

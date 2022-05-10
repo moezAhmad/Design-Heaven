@@ -3,7 +3,10 @@ import { useState } from "react";
 
 import '../../App.scss'
 
-import {Textlabel_1} from "../../components/TextFields/textfield.component"
+//importing hook
+import { useSignup } from "../../Hooks/useSignup";
+
+import { Textlabel_1 } from "../../components/TextFields/textfield.component"
 
 
 export default function SignUpPage() {
@@ -14,37 +17,38 @@ export default function SignUpPage() {
   const [Cpassword, setCpassword] = useState('');
 
 
+  const { signup, error, isPending } = useSignup();
+
   const handleSubmit = (e) => {
     e.preventDefault()  //to avoid referesh
-    alert("done Signup")
-    
+    signup(email, password)
+
   }
 
-
   return (
-    <div>
-    
-    <div className="SignandLogin_main">
-            
-    <Textlabel_1 state = {firstName} setState = {setFirstName} texttype = 'text' innertext='First Name'/>
-    <Textlabel_1 state = {lastName} setState = {setLastName} texttype = 'text' innertext='Last Name'/>
-    <Textlabel_1 state = {email} setState = {setEmail} texttype = 'text' innertext='Email'/>
-    <Textlabel_1 state = {password} setState = {setPassword} texttype = 'password' innertext='Password'/> 
-    <Textlabel_1 state = {Cpassword} setState = {Cpassword} texttype = 'password' innertext='Confirm Password'/> 
-    
+    <div className="main-SignUp">
 
-   <button className="SignandLogin_butt" onClick={handleSubmit}>SignUp </button>
-   <br></br>
+      <div className="SignandLogin_main">
 
-   {/* <hr/> */}
+        <Textlabel_1 state={firstName} setState={setFirstName} texttype='text' innertext='First Name' />
+        <Textlabel_1 state={lastName} setState={setLastName} texttype='text' innertext='Last Name' />
+        <Textlabel_1 state={email} setState={setEmail} texttype='text' innertext='Email' />
+        <Textlabel_1 state={password} setState={setPassword} texttype='password' innertext='Password' />
+        <Textlabel_1 state={Cpassword} setState={setCpassword} texttype='password' innertext='Confirm Password' />
 
-       <img alt="circle" className="landing__testimonials__circle landing__testimonials__images" />
-       <img alt="sphere" className="landing__testimonials__sphere landing__testimonials__images" />
-       <img alt="triangle" className="landing__testimonials__triangle landing__testimonials__images" />
-       <img alt="square" className="landing__testimonials__square landing__testimonials__images" />  
+        <img alt="circle" className="landing__testimonials__circle landing__testimonials__images" />
+        <img alt="sphere" className="landing__testimonials__sphere landing__testimonials__images" />
+        <img alt="triangle" className="landing__testimonials__triangle landing__testimonials__images" />
+        <img alt="square" className="landing__testimonials__square landing__testimonials__images" />
 
+        {!isPending && <button className="SignandLogin_butt" onClick={handleSubmit}>SignUp </button>}
+
+        {isPending && <button className="SignandLogin_butt" disabled>loading</button>}
+        {error && <p className="Error-signUp">{error}</p>}
+        {/* if there is error then print it */}
+
+      </div>
     </div>
-</div>
   )
 }
 
