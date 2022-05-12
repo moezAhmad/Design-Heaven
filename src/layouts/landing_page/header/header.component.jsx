@@ -27,20 +27,24 @@ const navItems = {
             to: '/apply'
         }
     ],
-    navItemsRight: {
-        text: [
-            {
-                id: 1,
-                text: "Help Center",
-                to: 'help_center'
-            },
+    navItemsRight: [
+        {
+            id: 1,
+            text: "Help Center",
+            to: 'help_center'
+        },
 
-        ],
-        logo: {
-            id: 2,
-            text: 'g',
-            to: '/account'
-        }
+    ],  
+    logo:{
+        content:"../../abstracts/images/logo_1.svg",
+        alt:"",
+        width:"0px",
+        
+    },
+    logoText: {
+        id: 2,
+        text: 'g',
+        to: '/account'
     }
 }
 

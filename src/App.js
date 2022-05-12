@@ -3,19 +3,20 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import React, { Component }  from 'react';
 
 import  AfterLogandSign  from "./layouts/Accounts/pageAfterLogandSign";
-import { LandingPage } from "./pages/landing.component";
+import { LandingPage } from "./pages/landing/landing.component";
 import  LoginPage  from "./layouts/Accounts/Login";
 import  SignUpPage  from "./layouts/Accounts/Signup";
 
 
 import { AccountPage } from "./pages/Account.component";
+import { DashboardDesigner } from "./pages/dashboard/dashboard_designer.component";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<LandingPage />} />
+          <Route path="/" element={<DashboardDesigner />} />
                 
           <Route path="account" element={<AccountPage />}>
             <Route path="" element={<LoginPage />} />

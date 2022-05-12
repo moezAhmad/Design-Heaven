@@ -18,8 +18,28 @@
     }
 
     &--item {
-        color: $color-white;
-        padding: 1.5rem 4rem;
+        &--black{
+            color: $color-white;
+            &:hover {
+            
+                &::after{
+                    border-bottom: .1rem solid $color-secondary;
+                    width: 85%;
+                }
+            }
+        }
+        &--white{
+            color: $color-black;
+            &:hover {
+            
+                &::after{
+                    border-bottom: .1rem solid $color-black;
+                    width: 85%;
+                }
+            }
+        }
+        
+        padding: 1.5rem 3rem;
         z-index: 1;
         
         &::after{
@@ -31,17 +51,19 @@
             content: "";
             transition: all .2s ease-in;    
         }
-        &:hover {
-            
-            &::after{
-                border-bottom: .1rem solid $color-secondary;
-                width: 80%;
-            }
-        }
+        
     }
 
     &--logo {
-        background-color: $color-white;
+        &--black{
+            background-color: $color-white;
+            color: $color-black;
+        }
+        &--white{
+            background-color: $color-black;
+            color: $color-white;
+        }
+        
         border-radius: 50rem;
         display: inline-block;
         width: 5rem;
@@ -50,9 +72,12 @@
         align-self: center;
         text-align: center;
         margin-left: 2rem;
-        color: $color-black;
+        
         font-size: 2.5rem;
         font-weight: 500;
+    }
+    &--img{
+        content: url("../../abstracts/images/logo_1.svg");
     }
 
 
