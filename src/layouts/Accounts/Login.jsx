@@ -6,7 +6,6 @@ import { useLogin } from "../../Hooks/useLogin";
 
 import { googleProvider , githubProvider, facebookProvider } from "./socialAuthMethod"
 
-import socialMediaAuth from './socialAuthentication'
 
 import google_photo from "./img/Google__G__Logo.svg"
 import facebook_photo from "./img/facebook-new.png"
@@ -22,13 +21,13 @@ export default function LoginPage() {
 
   const { login, error, isPending } = useLogin() 
 
-  const ClickOnSocialButton = async(provider) => { 
-      const res = await socialMediaAuth(provider)
-      console.log(res)
+  const ClickOnSocialButton = async(provider) => {
+    login(null , null ,provider)
+
    }
 
   const handleSubmit = (e) => {
-    login(email , password)
+    login(email , password ,null)
 
   }
 

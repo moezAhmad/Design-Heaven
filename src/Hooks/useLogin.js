@@ -2,6 +2,7 @@ import { useState, useEffect , useRef } from "react";
 import { projectAuth } from "../Firebase/firebase-config";
 import { useAuthContext } from "./useAuthContext"
 import { useNavigate  } from "react-router-dom";
+import socialMediaAuth from '../layouts/Accounts/socialAuthentication'
 
 
 export const useLogin = () => {
@@ -12,23 +13,31 @@ export const useLogin = () => {
     const {dispatch} = useAuthContext()
     const navigate = useNavigate();
 
-    const count = useRef(0);
 
-    const login = async (email,password) => {
+    const login = async (email,password, provider ) => {
         setError(null)
         setisPending(true)
 
         //Sign the user out
         try {
-            const res = await projectAuth.signInWithEmailAndPassword(email,password) //logout from database
 
+            if(email==null && password== null){
+
+                const res = await socialMediaAuth(provider)
+                dispatch({ type : 'LOGIN', payload : res})      
+
+            }
+
+            if(provider == null){
+                const res = await projectAuth.signInWithEmailAndPassword(email,password) //logout from database
+                dispatch({ type : 'LOGIN', payload : res.user})
+                
+            }
             // logout from our global state of program
-            dispatch({ type : 'LOGIN', payload : res.user})
             if(!isCancelled){
                 setisPending(false)
                 setError(null)
                 navigate("/afterLogandSign");
-
             }
 
         } catch (err) {
@@ -40,11 +49,7 @@ export const useLogin = () => {
         }
 
     }
-    
-
     useEffect(() => {
-        count.current = count.current + 1;
-        console.log(count.current)
       },
       ()=>{ //cleanup if user switch the componenet before loging out
 
@@ -52,7 +57,6 @@ export const useLogin = () => {
             setisCancelled(true);
         }
     },[])
-    
 
     return { login, error, isPending }
 
