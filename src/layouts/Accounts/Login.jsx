@@ -4,9 +4,13 @@ import "../../App.scss";
 
 import { useLogin } from "../../Hooks/useLogin";
 
+import { googleProvider , githubProvider, facebookProvider } from "./socialAuthMethod"
+
+import socialMediaAuth from './socialAuthentication'
 
 import google_photo from "./img/Google__G__Logo.svg"
 import facebook_photo from "./img/facebook-new.png"
+import github_photo from "./img/githubIcon.svg"
 import { Textlabel_1 } from "../../components/TextFields/textfield.component"
 import { SocialButn } from "./Social_login_bttn.component"
 
@@ -18,10 +22,14 @@ export default function LoginPage() {
 
   const { login, error, isPending } = useLogin() 
 
-  const handleOnClick = () => { alert("clicked") }
+  const ClickOnSocialButton = async(provider) => { 
+      const res = await socialMediaAuth(provider)
+      console.log(res)
+   }
 
   const handleSubmit = (e) => {
     login(email , password)
+
   }
 
   // console.log(email,password)
@@ -41,9 +49,11 @@ export default function LoginPage() {
       <h3>OR</h3>
       <hr />
       <div>
-        <div onClick={handleOnClick}> <SocialButn srcurl={google_photo} text="Login in with Google" /></div>
+        <div onClick={()=>ClickOnSocialButton(googleProvider)}> <SocialButn srcurl={google_photo} text="Login in with Google" /></div>
         <br></br>
-        <div onClick={handleOnClick}> <SocialButn srcurl={facebook_photo} text="Login in with Facebook" /></div>
+        <div onClick={()=>ClickOnSocialButton(githubProvider)}> <SocialButn srcurl={github_photo} text="Login in with Github" /></div>
+        <br></br>
+        <div onClick={()=>ClickOnSocialButton(facebookProvider)}> <SocialButn srcurl={facebook_photo} text="Login in with Facebook" /></div>
       </div>
       <img alt="circle" className="landing__testimonials__circle landing__testimonials__images" />
       <img alt="sphere" className="landing__testimonials__sphere landing__testimonials__images" />

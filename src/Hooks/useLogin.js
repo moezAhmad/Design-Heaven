@@ -1,6 +1,8 @@
 import { useState, useEffect , useRef } from "react";
 import { projectAuth } from "../Firebase/firebase-config";
 import { useAuthContext } from "./useAuthContext"
+import { useNavigate  } from "react-router-dom";
+
 
 export const useLogin = () => {
 
@@ -8,6 +10,7 @@ export const useLogin = () => {
     const [error ,setError] = useState(null)
     const [isPending ,setisPending] = useState(false)
     const {dispatch} = useAuthContext()
+    const navigate = useNavigate();
 
     const count = useRef(0);
 
@@ -24,6 +27,8 @@ export const useLogin = () => {
             if(!isCancelled){
                 setisPending(false)
                 setError(null)
+                navigate("/afterLogandSign");
+
             }
 
         } catch (err) {
@@ -33,7 +38,6 @@ export const useLogin = () => {
                 setisPending(false)
             }
         }
-
 
     }
     

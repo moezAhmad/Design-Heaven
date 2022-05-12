@@ -22,6 +22,7 @@ export default function SignUpPage() {
   const handleSubmit = (e) => {
     e.preventDefault()  //to avoid referesh
     signup(email, password)
+    
 
   }
 

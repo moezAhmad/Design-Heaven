@@ -9,7 +9,7 @@ export const useSignup = () => {
   const [isCancelled, setIsCancelled] = useState(false)
   const [error, setError] = useState(null)
   const [isPending, setIsPending] = useState(false)
-  const { dispatch } = useAuthContext()
+  const {user,dispatch} = useAuthContext()
   const navigate = useNavigate();
 
   const count = useRef(0);
@@ -21,7 +21,7 @@ export const useSignup = () => {
     try {
       // signup
       const res = await projectAuth.createUserWithEmailAndPassword(email, password)
-
+      console.log(res)
       if (!res) {
         throw new Error('Could not complete signup')
       }
@@ -32,7 +32,8 @@ export const useSignup = () => {
       if (!isCancelled) {
         setIsPending(false)
         setError(null)
-
+        navigate("/afterLogandSign");
+        
       }
       // console.log(useAuthContext.state)
     } 
@@ -40,7 +41,6 @@ export const useSignup = () => {
       if (!isCancelled) {
         setError(err.message)
         setIsPending(false)
-        navigate("/afterLogandSign");
 
       }
     }
