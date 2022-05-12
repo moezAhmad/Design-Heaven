@@ -2,8 +2,14 @@ import React from "react";
 import { useState } from "react";
 import "../../App.scss";
 
+import { useLogin } from "../../Hooks/useLogin";
+
+import { googleProvider , githubProvider, facebookProvider } from "./socialAuthMethod"
+
+
 import google_photo from "./img/Google__G__Logo.svg"
 import facebook_photo from "./img/facebook-new.png"
+import github_photo from "./img/githubIcon.svg"
 import { Textlabel_1 } from "../../components/TextFields/textfield.component"
 import { SocialButn } from "./Social_login_bttn.component"
 
@@ -13,12 +19,16 @@ export default function LoginPage() {
   const [email, setemail] = useState('');
   const [password, setpassword] = useState('');
 
-  const handleOnClick = () => { alert("clicked") }
+  const { login, error, isPending } = useLogin() 
+
+  const ClickOnSocialButton = async(provider) => {
+    login(null , null ,provider)
+
+   }
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    alert("done")
-    console.log(email,password)
+    login(email , password ,null)
+
   }
 
   // console.log(email,password)
@@ -29,14 +39,20 @@ export default function LoginPage() {
       <Textlabel_1 state={email} setState={setemail} texttype='email' innertext='Email' />
       <Textlabel_1 state={password} setState={setpassword} texttype='password' innertext='Password' />
 
-      <button className="SignandLogin_butt " onClick={handleSubmit}>Login </button>
+
+      { !isPending && <button className="SignandLogin_butt " onClick={handleSubmit}>Login </button>}
+      { isPending && <button className="SignandLogin_butt" disabled>Loading</button> }
+      { error && <p className="Error-login">{error}</p> } 
+
       &nbsp;
       <h3>OR</h3>
       <hr />
       <div>
-        <div onClick={handleOnClick}> <SocialButn srcurl={google_photo} text="Login in with Google" /></div>
+        <div onClick={()=>ClickOnSocialButton(googleProvider)}> <SocialButn srcurl={google_photo} text="Login in with Google" /></div>
         <br></br>
-        <div onClick={handleOnClick}> <SocialButn srcurl={facebook_photo} text="Login in with Facebook" /></div>
+        <div onClick={()=>ClickOnSocialButton(githubProvider)}> <SocialButn srcurl={github_photo} text="Login in with Github" /></div>
+        <br></br>
+        <div onClick={()=>ClickOnSocialButton(facebookProvider)}> <SocialButn srcurl={facebook_photo} text="Login in with Facebook" /></div>
       </div>
       <img alt="circle" className="landing__testimonials__circle landing__testimonials__images" />
       <img alt="sphere" className="landing__testimonials__sphere landing__testimonials__images" />
