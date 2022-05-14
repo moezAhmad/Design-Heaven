@@ -1,3 +1,6 @@
+.abc{
+    background-color: green!important;
+}
 .nav {
     @include clear-fix;
     max-width: 180rem;
@@ -18,6 +21,14 @@
     }
 
     &--item {
+        &--is_active{
+            &--black{
+                color: $color-secondary !important;
+            }
+            &--white{
+                color: $color-secondary !important;
+            }
+        }
         &--black{
             color: $color-white;
             &:hover {

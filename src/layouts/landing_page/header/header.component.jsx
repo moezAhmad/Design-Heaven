@@ -3,6 +3,7 @@ import { Navbar } from "../../../components/navbar/navbar.component";
 import { TextBox } from "../../../components/textbox/TextBox.component";
 import { Btn_3 } from "../../../components/buttons/btn_3/btn_3.component";
 import "../../../App.scss"
+import { Outlet } from "react-router-dom";
 
 const navItems = {
     navItemsLeft: [
@@ -53,6 +54,7 @@ export class LandingHeader extends React.Component {
         return (
             <div className="landing__header">
                 <Navbar navItems={navItems} />
+                <Outlet/>
                 <TextBox />
             </div>
         )
