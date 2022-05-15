@@ -1,8 +1,19 @@
 .heading-secondary{
-    font-size: 3rem;
-    font-weight: 700;
+    &--1{
+        font-size: 3rem;
+        font-weight: 700;
+        display: inline-block;    
+    }
+    &--2{
+        font-size: 2rem;
+        font-weight: 600;
+        
+    }
+    &--3{
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
     display: inline-block;
-    
     -webkit-background-clip: text;
     color: transparent;
     letter-spacing: 0rem;

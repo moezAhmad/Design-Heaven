@@ -14,21 +14,27 @@
 @import "./components/buttons/btn_3/btn_3.style";
 @import "./components/heading-secondary/heading-secondary.style";
 @import "./components/card-list/card-list.style";
+@import "./components/long_card-list/long_card-list.style";
 @import "./components/card/card.style";
 @import "./components/text-slider/text-slider.style";
 @import "./components/text-slider/slider-contents/slider-content.style";
 @import "./components/TextFields/textfield.style";
-@import "./layouts/Accounts/Social_login_bttn.style";
+@import "./components/long_card/long_card.style";
+@import "./components/buttons/btn_4/btn_4.style";
+@import "./components/long_card-list/long_card-list.style";
 
+
+@import "./layouts/Accounts/Social_login_bttn.style";
 @import "./layouts/landing_page/testimonials/testimonial.style";
 @import "./layouts/landing_page/header/header.style";
 @import "./layouts/landing_page/footer/footer.style";
 @import "./layouts/landing_page/past_designs/past_designs.style";
 @import "./layouts/profile_header/profile_header.style";
+@import "./layouts/competitions_container/competitions_container.style";
 @import "./layouts/grid.style";
 
 @import "./pages/landing/landing.style";
-@import "./pages/dashboard/designer.style";
+@import "./pages/designer/designer.style";
 
 @import "./layouts/Accounts/login.style";
 @import "./layouts/Accounts/signup.style";

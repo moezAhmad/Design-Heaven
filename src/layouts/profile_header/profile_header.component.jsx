@@ -61,9 +61,8 @@ export class ProfileHeader extends React.Component {
             <div>
                 <div className="profile__header">
                     <Navbar navItems={navItems} headingHandler={this.headingHandler} />
-                    <HeadingSecondary text={this.state.heading} modifier="black" position="testimonials-past-format" />
+                    <HeadingSecondary text={this.state.heading} font_modifier="1" color_modifier="black" position="testimonials-past-format" />
                 </div>
-                <Outlet />
             </div>
 
         )

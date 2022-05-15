@@ -16,8 +16,5 @@
     &:active{
         
     }
-    &--animated{
-        animation: fade_in .4s ease-in .75s ;
-        animation-fill-mode: backwards;
-    }
+  
 }

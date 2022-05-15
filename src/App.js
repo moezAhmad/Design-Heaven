@@ -9,14 +9,18 @@ import SignUpPage from "./layouts/Accounts/Signup";
 
 
 import { AccountPage } from "./pages/Account.component";
-import { DesignerPage } from "./pages/dashboard/dashboard_designer.component";
+import { DesignerPage } from "./pages/designer/designer.component";
+import { CompetitionContainer } from "./layouts/competitions_container/competitions_container.component";
+import { LongCard } from "./components/long_card/long_card.component";
+import { Btn_3 } from "./components/buttons/btn_3/btn_3.component";
+import { Btn_4 } from "./components/buttons/btn_4/btn_4.component";
 
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<LandingPage />}>
+          <Route path="/" element={<LandingPage/>}>
             
           </Route>
 
@@ -28,9 +32,9 @@ function App() {
 
           <Route path="/afterLogandSign" element={< AfterLogandSign />} />
           <Route path="designer" element={<DesignerPage />}>
-            <Route path="" element={<LoginPage />} />
-            <Route path="dashboard" element={<LoginPage />} />
-            <Route path="competition" element={<SignUpPage />} />
+            <Route path="" element={<CompetitionContainer />} />
+            <Route path="dashboard" element={<CompetitionContainer />} />
+            <Route path="competition" element={<CompetitionContainer />} />
             <Route path="profile" element={<LoginPage />} />
             <Route path="helpcenter" element={<SignUpPage />} />
           </Route>
