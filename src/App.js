@@ -32,7 +32,6 @@ function App() {
 
           <Route path="/afterLogandSign" element={< AfterLogandSign />} />
           <Route path="designer" element={<DesignerPage />}>
-            <Route path="" element={<CompetitionContainer />} />
             <Route path="dashboard" element={<CompetitionContainer />} />
             <Route path="competition" element={<CompetitionContainer />} />
             <Route path="profile" element={<LoginPage />} />

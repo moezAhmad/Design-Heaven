@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "../../../App.scss"
 
 export const Btn_3 = ({text,animation,clickable})=>{
@@ -6,6 +7,6 @@ export const Btn_3 = ({text,animation,clickable})=>{
         return clickable ? "btn_3--clickable":""
     }
     return(
-        <a className={`btn btn_3 btn__animated--${animation} ${handleClickAnimation()}`} href="#">{text}</a>
+        <NavLink className={`btn btn_3 btn__animated--${animation} ${handleClickAnimation()}`} to="#">{text}</NavLink>
     )
 }

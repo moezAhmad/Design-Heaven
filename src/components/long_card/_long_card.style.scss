@@ -7,13 +7,18 @@
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
     grid-gap: 3rem;
-
+    transition: all .1s ease-in;
+    &:hover{
+        box-shadow: 0 1rem 2rem rgba($color-black,0.2);
+        transform: translate(-.2rem);    
+    }
     &:not(:last-child) {
         margin-bottom: 3rem;
     }
 
     &__image {
         width: 100%;
+        // box-shadow: 0 1rem 2rem rgba($color-black,0.2);
     }
 
     &__details {
