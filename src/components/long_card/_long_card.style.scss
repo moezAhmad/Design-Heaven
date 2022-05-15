@@ -1,6 +1,51 @@
-.card--long{
- width: 85%;
- background-color: $color-gray-light-2;
- padding: 5rem 3rem;
- margin: 0 auto;   
+.card--long {
+    width: 85%;
+    background-color: $color-gray-light-2;
+    padding: 2rem 3rem;
+    margin: 0 auto;
+    border-radius: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-gap: 3rem;
+
+    &:not(:last-child) {
+        margin-bottom: 3rem;
+    }
+
+    &__image {
+        width: 100%;
+    }
+
+    &__details {
+        color: $color-black;
+
+        &__client {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-top: 1rem;
+        }
+
+        &__brief {
+            font-size: 1.2rem;
+            font-weight: 400;
+            margin-top: 1rem;
+        }
+    }
+
+    &__status {
+        &__display{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+        &__time{
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        &__entries{
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+    }
 }

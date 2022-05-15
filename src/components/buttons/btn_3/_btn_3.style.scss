@@ -5,15 +5,21 @@
     font-size:1.4rem;
     font-weight: 600; 
     padding: 1rem 1.5rem;
-    &:hover{
-        box-shadow: 0 1rem 2rem rgba($color-black,0.2);
-        transform: translateY(-.2rem);
-        
+    &:not(:last-child){
+        margin-right: 1rem;
     }
-    &:active{
-        box-shadow: 0 .5rem 1rem rgba($color-black,0.2);
-        transform: translateY(-.1rem);
+    &--clickable{
+        &:hover{
+            box-shadow: 0 1rem 2rem rgba($color-black,0.2);
+            transform: translateY(-.2rem);
+            
+        }
+        &:active{
+            box-shadow: 0 .5rem 1rem rgba($color-black,0.2);
+            transform: translateY(-.1rem);
+        }
     }
+    
     &--down{
 
     }

@@ -10,7 +10,6 @@ export class DesignerPage extends React.Component{
             <div>
                 <ProfileHeader/>
                 <Outlet />
-                <CompetitionContainer/>
             </div>
         )
     }
