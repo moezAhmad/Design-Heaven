@@ -27,6 +27,7 @@ export const LongCardList = ({ competitions }) => {
                 totalCount={competitions.length}
                 pageSize={PageSize}
                 onPageChange={page => setCurrentPage(page)}
+                colorModifier = "black"
             />
         </div>
     )

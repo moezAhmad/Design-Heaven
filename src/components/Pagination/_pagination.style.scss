@@ -4,11 +4,17 @@
     list-style-type: none;
   
     .pagination-item {
+      &--white{
+        color: rgba($color-white, 0.87);
+      }
+      &--black{
+        color: rgba($color-black, 0.87);
+      }
       padding: 0 12px;
       height: 32px;
       text-align: center;
       margin: auto 4px;
-      color: rgba(0, 0, 0, 0.87);
+      transition: all .1s ease-in;
       display: flex;
       box-sizing: border-box;
       align-items: center;
@@ -24,15 +30,34 @@
         cursor: default;
       }
       &:hover {
-        background-color: rgba($color-secondary, .5);
+        background-color: rgba($color-secondary, 1);
         cursor: pointer;
       }
   
       &.selected {
         background-color: $color-secondary;
+        &__white{
+          color: rgba($color-white, 0.87);
+        }
+        &__black{
+          color: rgba($color-black, 0.87);
+        }
+
       }
   
       .arrow {
+        &--white{
+          &::before{
+            border-right: 0.12em solid rgba($color-white, 0.87);
+            border-top: 0.12em solid rgba($color-white, 0.87);
+          }       
+        }
+        &--black{
+          &::before{
+            border-right: 0.12em solid rgba($color-black, 0.87);
+            border-top: 0.12em solid rgba($color-black, 0.87);
+          }
+        }
         &::before {
           position: relative;
           /* top: 3pt; Uncomment this to lower the icons as requested in comments*/
@@ -41,8 +66,7 @@
           display: inline-block;
           width: 0.4em;
           height: 0.4em;
-          border-right: 0.12em solid rgba(0, 0, 0, 0.87);
-          border-top: 0.12em solid rgba(0, 0, 0, 0.87);
+         
         }
   
         &.left {

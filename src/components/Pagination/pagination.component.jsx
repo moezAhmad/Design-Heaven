@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import '../../App.scss';
-import { usePagination,DOTS } from '../../Hooks/usePagination';
+import { usePagination,DOTS} from '../../Hooks/usePagination';
 const Pagination = props => {
   const {
     onPageChange,
@@ -9,7 +9,8 @@ const Pagination = props => {
     siblingCount = 1,
     currentPage,
     pageSize,
-    className
+    className,
+    colorModifier
   } = props;
 
   const paginationRange = usePagination({
@@ -37,22 +38,23 @@ const Pagination = props => {
       className={classnames('pagination-container', { [className]: className })}
     >
       <li
-        className={classnames('pagination-item', {
+        className={classnames(`pagination-item pagination-item--${colorModifier}`, {
           disabled: currentPage === 1
         })}
         onClick={onPrevious}
       >
-        <div className="arrow left" />
+        <div className={`arrow arrow--${colorModifier} left`} />
       </li>
       {paginationRange.map(pageNumber => {
         if (pageNumber === DOTS) {
-          return <li className="pagination-item dots">&#8230;</li>;
+          return <li className={`pagination-item pagination-item--${colorModifier} dots`} >&#8230;</li>;
         }
 
         return (
           <li
-            className={classnames('pagination-item', {
-              selected: pageNumber === currentPage
+            className={classnames(`pagination-item pagination-item--${colorModifier}`, {
+              selected : pageNumber === currentPage,
+              selected__black: pageNumber === currentPage&&colorModifier ==="white" 
             })}
             onClick={() => onPageChange(pageNumber)}
           >
@@ -61,12 +63,12 @@ const Pagination = props => {
         );
       })}
       <li
-        className={classnames('pagination-item', {
+        className={classnames(`pagination-item pagination-item--${colorModifier}`, {
           disabled: currentPage === lastPage
         })}
         onClick={onNext}
       >
-        <div className="arrow right" />
+        <div className={`arrow arrow--${colorModifier} right`} />
       </li>
     </ul>
   );
