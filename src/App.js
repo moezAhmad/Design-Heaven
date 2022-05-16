@@ -1,6 +1,6 @@
 import "./App.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import React, { Component } from 'react';
+import React from 'react';
 
 import AfterLogandSign from "./layouts/Accounts/pageAfterLogandSign";
 import { LandingPage } from "./pages/landing/landing.component";
@@ -10,11 +10,8 @@ import SignUpPage from "./layouts/Accounts/Signup";
 
 import { AccountPage } from "./pages/Account.component";
 import { DesignerPage } from "./pages/designer/designer.component";
-import { CompetitionContainer } from "./layouts/competitions_container/competitions_container.component";
-import { LongCard } from "./components/long_card/long_card.component";
-import { Btn_3 } from "./components/buttons/btn_3/btn_3.component";
-import { Btn_4 } from "./components/buttons/btn_4/btn_4.component";
-
+import { DashboardDesigner } from "./layouts/designer/dashboard/dashboard_designer.component";
+import { ProfileDesigner } from "./layouts/designer/profile/profile_designer.component";
 function App() {
   return (
     <>
@@ -32,9 +29,9 @@ function App() {
 
           <Route path="/afterLogandSign" element={< AfterLogandSign />} />
           <Route path="designer" element={<DesignerPage />}>
-            <Route path="dashboard" element={<CompetitionContainer />} />
-            <Route path="competition" element={<CompetitionContainer />} />
-            <Route path="profile" element={<LoginPage />} />
+            <Route path="dashboard" element={<DashboardDesigner />} />
+            <Route path="competition" element={<DashboardDesigner />} />
+            <Route path="profile" element={<ProfileDesigner />} />
             <Route path="helpcenter" element={<SignUpPage />} />
           </Route>
         </Routes>

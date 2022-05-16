@@ -9,29 +9,29 @@ const navItems = {
     navItemsLeft: [
         {
             id: 1,
-            text: 'About',
+            navText: 'About',
             to: '/about'
         },
         {
             id: 2,
-            text: 'FAQs',
+            navText: 'FAQs',
             to: '/faqs'
         },
         {
             id: 3,
-            text: 'Hire',
+            navText: 'Hire',
             to: '/hire'
         },
         {
             id: 4,
-            text: 'Apply',
+            navText: 'Apply',
             to: '/apply'
         }
     ],
     navItemsRight: [
         {
             id: 1,
-            text: "Help Center",
+            navText: "Help Center",
             to: 'help_center'
         },
 
@@ -44,7 +44,7 @@ const navItems = {
     },
     logoText: {
         id: 2,
-        text: 'g',
+        navText: 'g',
         to: '/account'
     }
 }

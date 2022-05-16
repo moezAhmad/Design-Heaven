@@ -5,7 +5,7 @@
     margin-bottom: 8rem;
 }
 .u-margin-bottom-medium{
-    margin-bottom: 3rem;
+    margin-bottom: 3rem !important;
 }
 .u-margin-bottom-small{
     margin-bottom: 1.5rem !important;
@@ -21,8 +21,8 @@
 }
 .u-pos-bottom-right{
     position: absolute !important;
-    bottom: 10rem;
-    right: 10rem;
+    bottom: 1rem;
+    right: 1rem;
 }
 .testimonials-past-format{
     width: 85%;

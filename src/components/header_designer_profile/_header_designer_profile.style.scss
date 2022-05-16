@@ -1,0 +1,18 @@
+.profile--designer__header{
+    background-color: $color-gray-light-2;
+    &__container{
+        position: relative;
+        background-size: contain;
+        background-position: center;
+        border-radius: .5rem;
+        margin: 0 auto;
+        width: 85%;
+        height: 15rem;
+        &__profile{
+            position: absolute;
+            top: .5rem;
+            left: 2rem;
+            border-radius: 10rem;
+        }
+    }
+}

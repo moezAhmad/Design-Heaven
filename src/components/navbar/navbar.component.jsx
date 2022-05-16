@@ -9,20 +9,20 @@ export const Navbar = ({ navItems, headingHandler }) => {
     }
 
     const handleIsActive = (navData) => {
-       
-        if(navData.isActive){
+
+        if (navData.isActive) {
             return `btn nav--item nav--item--${handleColor()} nav--item--is_active--${handleColor()}`
         }
-        else{
+        else {
             return `btn nav--item nav--item--${handleColor()}`
         }
-       
+
 
     }
 
     return (
         <div>
-            <nav className="nav u-margin-bottom-small">
+            <nav className="nav">
 
                 <div className="nav__items nav__items--left">
                     <img src="./" className="nav--img" alt={navItems.logo.alt} style={{ width: navItems.logo.width }} />
@@ -30,11 +30,10 @@ export const Navbar = ({ navItems, headingHandler }) => {
                         <NavLink
                             key={item.id}
                             className={handleIsActive} to={item.to}
-                            onClick={e=>headingHandler(e,item.text)}
                         >
-                            
 
-                            {item.text}
+
+                            {item.navText}
                         </NavLink>
                     )}
                 </div>
@@ -45,15 +44,20 @@ export const Navbar = ({ navItems, headingHandler }) => {
                             <NavLink
                                 key={item.id}
                                 className={handleIsActive} to={item.to}
-                                onClick={e=>headingHandler(e,item.text)}
                             >
-                                {item.text}
+                                {item.navText}
                             </NavLink>
                         )
                     }
                     )}
 
-                    <Link key={navItems.logoText.id} className={`btn nav--logo nav--logo--${handleColor()}`} to={navItems.logoText.to}>{navItems.logoText.text.toUpperCase()}</Link>
+                    <Link
+                        key={navItems.logoText.id}
+                        className={`btn nav--logo nav--logo--${handleColor()}`}
+                        to={navItems.logoText.to}
+                    >
+                        {navItems.logoText.navText.toUpperCase()}
+                    </Link>
                 </div>
 
             </nav>
