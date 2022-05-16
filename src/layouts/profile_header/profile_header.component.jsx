@@ -19,7 +19,7 @@ const navItems = {
         {
             id: 3,
             navText: 'Profile',
-            to: 'profile'
+            to: 'profile/current'
         },
 
     ],

@@ -12,13 +12,15 @@ import { AccountPage } from "./pages/Account.component";
 import { DesignerPage } from "./pages/designer/designer.component";
 import { DashboardDesigner } from "./layouts/designer/dashboard/dashboard_designer.component";
 import { ProfileDesigner } from "./layouts/designer/profile/profile_designer.component";
+import { DesignsContainer } from "./components/designs_container/designs_container.component";
+import { DesignerAbout } from "./components/designer_about/designer_about.component";
 function App() {
   return (
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<LandingPage/>}>
-            
+          <Route path="/" element={<LandingPage />}>
+
           </Route>
 
           <Route path="account" element={<AccountPage />}>
@@ -31,7 +33,11 @@ function App() {
           <Route path="designer" element={<DesignerPage />}>
             <Route path="dashboard" element={<DashboardDesigner />} />
             <Route path="competition" element={<DashboardDesigner />} />
-            <Route path="profile" element={<ProfileDesigner />} />
+            <Route path="profile" element={<ProfileDesigner />}>
+              <Route path="current" element={<DesignsContainer />} />
+              <Route path="past" element={<DesignsContainer />} />
+              <Route path="about" element={<DesignerAbout />} />
+            </Route>
             <Route path="helpcenter" element={<SignUpPage />} />
           </Route>
         </Routes>

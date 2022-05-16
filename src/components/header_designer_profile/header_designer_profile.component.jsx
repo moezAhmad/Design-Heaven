@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'
 import React from "react";
 import "../../App.scss"
 import { Btn_3 } from "../buttons/btn_3/btn_3.component";
@@ -7,8 +9,17 @@ export const DesignerProfileHeader = ({ designer }) => {
         <div>
             <HeadingSecondary text={designer.name} font_modifier="1" color_modifier="black" position="testimonials-past-format" />
             <div className="profile--designer__header__container" style={{ backgroundImage: `url(${designer.coverPic})` }}>
-                <img className="profile--designer__header__container__profile" src={designer.profilePic} alt="Profile Pic"/>
-                <Btn_3 text ="Edit Cover" animation="2" clickable = {true} position = "u-pos-bottom-right"/>
+                <div
+                    className="profile--designer__header__container__profile"
+                    style={{ backgroundImage: `url(${designer.profilePic})` }}
+                    alt="Profile Pic"
+                >
+                    <FontAwesomeIcon
+                        icon={solid('pen-to-square')}
+                        size="4x"
+                        className="profile--designer__header__container__profile__edit" />
+                </div>
+                <Btn_3 text="Edit Cover" animation="2" clickable={true} position="u-pos-bottom-right" />
             </div>
         </div>
     )
