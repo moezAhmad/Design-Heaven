@@ -2,23 +2,23 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import "../../App.scss";
 import { Navbar } from "../../components/navbar/navbar.component";
-import { HeadingSecondary } from "../../components/heading-secondary/heading-secondary.component";
+const { faker } = require('@faker-js/faker');
 const navItems = {
     color: "white",
     navItemsLeft: [
         {
             id: 1,
-            text: 'Dashboard',
+            navText: 'Dashboard',
             to: 'dashboard'
         },
         {
             id: 2,
-            text: 'Competition',
+            navText: 'Competition',
             to: 'competition'
         },
         {
             id: 3,
-            text: 'Profile',
+            navText: 'Profile',
             to: 'profile'
         },
 
@@ -26,7 +26,7 @@ const navItems = {
     navItemsRight: [
         {
             id: 1,
-            text: "Help Center",
+            navText: "Help Center",
             to: 'helpcenter'
         },
 
@@ -39,29 +39,16 @@ const navItems = {
     },
     logoText: {
         id: 2,
-        text: 'g',
+        navText: 'g',
         to: '/account'
     }
 }
 export class ProfileHeader extends React.Component {
-    constructor() {
-        super()
-        this.state = {
-            heading: "Dashboard",
-        }
-    }
-    headingHandler = (e, str) => {
-        console.log(str)
-        this.setState({ heading: str })
-        return true;
-
-    }
     render() {
         return (
             <div>
                 <div className="profile__header">
-                    <Navbar navItems={navItems} headingHandler={this.headingHandler} />
-                    <HeadingSecondary text={this.state.heading} font_modifier="1" color_modifier="black" position="testimonials-past-format" />
+                    <Navbar navItems={navItems} />
                 </div>
             </div>
 
