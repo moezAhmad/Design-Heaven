@@ -25,7 +25,7 @@ export const LongCard = ({competition}) => {
                     <i className="fa fa-bar-chart" style={{fontSize:"3rem"}}></i>
                     <p className="card--long__status__entries">{competition.entries} entries</p>
                 </div>
-                <Btn_4 text="Apply" animation="2" margin="u-margin-top-medium"/>
+                <Btn_4 text="Apply" animation="2" margin="u-margin-top-medium" routeTo = "/designer/competition"/>
             </div>
 
 

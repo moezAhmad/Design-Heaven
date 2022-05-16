@@ -8,9 +8,14 @@ export const TextBox = () => {
     return (
         <div className="text-box">
             <img src="./" className="text-box__logo u-margin-bottom-small" alt="logo"></img>
-            <HeadingPrimary mainText = "Get your dream" subText = "design job done!"/>
-            <Btn_1 text = "Hire a designer" animation = "1"/>
-            <Btn_2 text = "Apply as a designer" animation = "2"/>
+            <HeadingPrimary mainText="Get your dream" subText="design job done!" />
+            <div>
+                <Btn_1 text="Hire a designer" animation="1" />
+            </div>
+            <div>
+                <Btn_2 text="Apply as a designer" animation="2" />
+            </div>
+
         </div>
     )
 }

@@ -5,7 +5,7 @@ import Pagination from "../Pagination/pagination.component";
 
 
 let PageSize = 8;
-export const CardList = ({ designs }) => {
+export const CardList = ({ designs, colorModifier }) => {
 
     const [currentPage, setCurrentPage] = useState(1);
     const currentDesigns = useMemo(() => {
@@ -27,7 +27,7 @@ export const CardList = ({ designs }) => {
                 totalCount={designs.length}
                 pageSize={PageSize}
                 onPageChange={page => setCurrentPage(page)}
-                colorModifier="white"
+                colorModifier={colorModifier}
             />
         </div>
 
