@@ -45,9 +45,9 @@ const Pagination = props => {
       >
         <div className={`arrow arrow--${colorModifier} left`} />
       </li>
-      {paginationRange.map(pageNumber => {
+      {paginationRange.map((pageNumber,i) => {
         if (pageNumber === DOTS) {
-          return <li className={`pagination-item pagination-item--${colorModifier} dots`} >&#8230;</li>;
+          return <li key = {i} className={`pagination-item pagination-item--${colorModifier} dots`} >&#8230;</li>;
         }
 
         return (

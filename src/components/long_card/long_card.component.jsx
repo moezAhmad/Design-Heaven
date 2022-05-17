@@ -4,12 +4,13 @@ import "../../App.scss"
 import { Btn_3 } from "../buttons/btn_3/btn_3.component";
 import { Btn_4 } from "../buttons/btn_4/btn_4.component";
 import { HeadingSecondary } from "../heading-secondary/heading-secondary.component";
+import { detailedCompetition } from "./designerEndDetails";
 
 export const LongCard = ({competition}) => {
     const [compDetails, setCompDetails] = useOutletContext()
     
     const setCompetitionDetails = ()=>{
-        setCompDetails(competition)
+        setCompDetails(detailedCompetition[0])
     } 
     return (
         <div className="card--long">
@@ -23,18 +24,24 @@ export const LongCard = ({competition}) => {
                 <p className="card--long__details__brief">{competition.details}</p>
             </div>
             <div className="card--long__status">
-                <div className="card--long__status__display u-margin-bottom-small">
-                    <i className="fa fa-clock-o" style={{fontSize:"3rem"}}></i>
-                    <p className="card--long__status__time">{competition.hours} hours left</p>
+                <div className="left__display u-margin-bottom-small">
+                    <i className="fa fa-clock-o text text__key" style={{fontSize:"3rem"}}></i>
+                    <p className="text text__value">{competition.hours} hours left</p>
                 </div>
-                <div className="card--long__status__display">
-                    <i className="fa fa-bar-chart" style={{fontSize:"3rem"}}></i>
-                    <p className="card--long__status__entries">{competition.entries} entries</p>
+                <div className="left__display u-margin-bottom-big">
+                    <i className="fa fa-bar-chart text text__key" style={{fontSize:"3rem"}}></i>
+                    <p className="text text__value">{competition.entries} entries</p>
                 </div>
-                <Btn_4 text="Apply" animation="2" margin="u-margin-top-medium" selected={setCompetitionDetails} routeTo = "/designer/competition"/>
+                <Btn_4 
+                text="Apply" animation="2" 
+                selected={setCompetitionDetails} 
+                routeTo = "/designer/competition"
+                />
             </div>
 
 
         </div>
     )
+    
 }
+

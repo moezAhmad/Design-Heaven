@@ -3,9 +3,14 @@ import { NavLink } from "react-router-dom";
 import "../../../App.scss"
 
 export const Btn_2 = ({ text,animation}) => {
+    const handleAnimation = ()=>{
+        if(animation){
+            return `btn__animated--${animation}`
+        }
+    }
     return (
         
-            <NavLink className={`btn btn_2 btn_2--primary btn__animated--${animation} u-margin-bottom-medium`} to="#">{text}</NavLink>
+            <NavLink className={`btn btn_2 btn_2--primary ${handleAnimation()}`} to="#">{text}</NavLink>
         
 
     )

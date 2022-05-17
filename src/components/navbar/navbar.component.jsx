@@ -3,7 +3,7 @@ import "../../App.scss";
 
 import { BrowserRouter, Route, Link, Outlet, NavLink } from "react-router-dom";
 
-export const Navbar = ({ navItems, headingHandler }) => {
+export const Navbar = ({ navItems}) => {
     const handleColor = () => {
         return navItems.color === "white" ? "white" : "black"
     }

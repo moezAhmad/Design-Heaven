@@ -35,16 +35,18 @@
         }
     }
     
-    
-    &:hover &-text{
-        transform: translate(-50%,-50%);
-        opacity: 1;        
+    &--hoverEffect{
+        &:hover &-text{
+            transform: translate(-50%,-50%);
+            opacity: 1;        
+        }
+        
+        &:hover &-image{
+            transform: scale(1.3);
+            filter: blur(.7rem);
+        }
     }
     
-    &:hover &-image{
-        transform: scale(1.3);
-        filter: blur(.7rem);
-    }
     
     
 }

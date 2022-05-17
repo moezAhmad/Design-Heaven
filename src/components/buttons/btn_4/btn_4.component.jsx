@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import "../../../App.scss"
 
-export const Btn_4 = ({ text, animation, margin, routeTo, selected, extendedClass}) => {
+export const Btn_4 = ({ text, animation, routeTo, selected, extendedClass}) => {
     const handleActiveButton = (e,selected) => {
         if(selected){
             if(e.target.text ==="Current"){
@@ -19,10 +19,26 @@ export const Btn_4 = ({ text, animation, margin, routeTo, selected, extendedClas
             }
         }
     }
+    const handleAnimation = ()=>{
+        if(animation){
+            return `btn__animated--${animation}`
+        }
+    }
+    const handleRouteTo = ()=>{
+        if(routeTo){
+            return routeTo
+        }
+    }
+    const handleExtendedClass = ()=>{
+        if(extendedClass){
+            return extendedClass
+        }
+    }
+
     return (
         <NavLink
-            className={`btn btn_4 btn__animated--${animation} ${margin} ${extendedClass}`}
-            to={routeTo}
+            className={`btn btn_4 ${handleAnimation()}  ${handleExtendedClass()}`}
+            to={handleRouteTo()}
             onClick={(e) => handleActiveButton(e,selected)}
         >
             {text}

@@ -22,7 +22,7 @@ export class PastDesigns extends React.Component {
     return (
       <div className="landing__past_designs">
         <HeadingSecondary text="Past Winning Designs" font_modifier="1" color_modifier="white" position="testimonials-past-format" />
-        <CardList designs={this.state.designs} colorModifier = "white"/>
+        <CardList designs={this.state.designs} colorModifier = "white" hoverEffect= {1}/>
       </div>
 
     )

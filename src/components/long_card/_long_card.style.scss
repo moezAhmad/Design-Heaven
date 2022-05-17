@@ -38,19 +38,6 @@
     }
 
     &__status {
-        &__display{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            align-items: center;
-        }
-        &__time{
-            font-size: 1.2rem;
-            font-weight: 500;
-        }
-        &__entries{
-            font-size: 1.2rem;
-            font-weight: 500;
-        }
+        
     }
 }

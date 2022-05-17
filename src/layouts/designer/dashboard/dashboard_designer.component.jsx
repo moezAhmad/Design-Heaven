@@ -2,6 +2,21 @@ import React from "react";
 import "../../../App.scss"
 import { HeadingSecondary } from "../../../components/heading-secondary/heading-secondary.component";
 import { LongCardList } from "../../../components/long_card-list/long_card-list.component";
+
+export class DashboardDesigner extends React.Component {
+
+    render() {
+        return (
+            <div className="dashboard--designer">
+                <div className="dashboard--designer__header u-margin-bottom-small">
+                    <HeadingSecondary text="Dashboard" font_modifier="1" color_modifier="black" position="testimonials-past-format" />
+                </div>
+                <HeadingSecondary text="New Competitions" font_modifier="2" color_modifier="black" position="testimonials-past-format" />
+                <LongCardList competitions={competitions} />
+            </div>
+        )
+    }
+}
 const competitions = [
     {
         id: 1,
@@ -384,18 +399,3 @@ const competitions = [
         entries: "10",
     },
 ]
-
-export class DashboardDesigner extends React.Component {
-
-    render() {
-        return (
-            <div className="dashboard--designer">
-                <div className="dashboard--designer__header u-margin-bottom-small">
-                    <HeadingSecondary text="Dashboard" font_modifier="1" color_modifier="black" position="testimonials-past-format" />
-                </div>
-                <HeadingSecondary text="New Competitions" font_modifier="2" color_modifier="black" position="testimonials-past-format" />
-                <LongCardList competitions={competitions} />
-            </div>
-        )
-    }
-}
