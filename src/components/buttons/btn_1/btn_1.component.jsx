@@ -7,6 +7,7 @@ export const Btn_1 = ({text,animation})=>{
         if(animation){
             return `btn__animated--${animation}`
         }
+        return ""
     }
     return(
         <NavLink className={`btn btn_1 btn_1--green  ${handleAnimation()} `} to="#">{text}</NavLink>

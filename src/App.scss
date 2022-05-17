@@ -25,11 +25,12 @@
 @import "./components//Pagination/pagination.style";
 @import "./components/designer_components/header/header_designer_profile/header_designer_profile.style";
 @import "./components/designs_container/designs_container.style";
-@import "./layouts/designer/designer_about/designer_about.style";
+@import "./components/client_components/header/header_client_profile/header_client_profile.style";
 @import "./components/designer_components/header/header_competition_details/header_competition_details.style";
+@import "./components/buttons/btn_5/btn_5.style";
+
+@import "./layouts/designer/designer_about/designer_about.style";
 @import "./layouts/designer/body_competition_details/body_competition_details.style";
-
-
 @import "./layouts/Accounts/Social_login_bttn.style";
 @import "./layouts/landing_page/testimonials/testimonial.style";
 @import "./layouts/landing_page/header/header.style";
@@ -38,11 +39,12 @@
 @import "./layouts/profile_header/profile_header.style";
 @import "./layouts/designer/dashboard/dashboard_designer.style";
 @import "./layouts/grid.style";
-@import "./layouts/designer/profile/profile_designer.style";
+@import "./layouts/profile/profile_designer.style";
 @import "./layouts/designer/competition_details/competition_details.style";
 
 @import "./pages/landing/landing.style";
 @import "./pages/designer/designer.style";
+@import "./pages/client/client.style";
 
 @import "./layouts/Accounts/login.style";
 @import "./layouts/Accounts/signup.style";

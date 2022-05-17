@@ -7,6 +7,7 @@ export const Btn_2 = ({ text,animation}) => {
         if(animation){
             return `btn__animated--${animation}`
         }
+        return ""
     }
     return (
         

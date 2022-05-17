@@ -11,10 +11,11 @@ import SignUpPage from "./layouts/Accounts/Signup";
 import { AccountPage } from "./pages/Account.component";
 import { DesignerPage } from "./pages/designer/designer.component";
 import { DashboardDesigner } from "./layouts/designer/dashboard/dashboard_designer.component";
-import { ProfileDesigner } from "./layouts/designer/profile/profile_designer.component";
+import { Profile } from "./layouts/profile/profile_designer.component";
 import { DesignsContainer } from "./components/designs_container/designs_container.component";
 import { DesignerAbout } from "./components/designer_about/designer_about.component";
 import { DesignerCompetitionDetails } from "./layouts/designer/competition_details/_competition_details.component";
+import { ClientPage } from "./pages/client/client.component";
 function App() {
   return (
     <>
@@ -31,16 +32,31 @@ function App() {
           </Route>
 
           <Route path="/afterLogandSign" element={< AfterLogandSign />} />
+
           <Route path="designer" element={<DesignerPage />}>
             <Route path="dashboard" element={<DashboardDesigner />} />
             <Route path="competition" element={<DesignerCompetitionDetails />} />
-            <Route path="profile" element={<ProfileDesigner />}>
+            <Route path="profile" element={<Profile />}>
               <Route path="current" element={<DesignsContainer />} />
               <Route path="past" element={<DesignsContainer />} />
               <Route path="about" element={<DesignerAbout />} />
             </Route>
             <Route path="helpcenter" element={<SignUpPage />} />
           </Route>
+
+          <Route path="client" element={<ClientPage />}>
+            <Route path="profile" element={<Profile />}>
+              <Route path="current" element={<DesignsContainer />} />
+              <Route path="past" element={<DesignsContainer />} />
+              <Route path="about" element={<DesignerAbout />} />
+            </Route>
+            <Route path="dashboard" element={<Profile />}>
+              <Route path="current" element={<DesignsContainer />} />
+              <Route path="past" element={<DesignsContainer />} />
+              <Route path="about" element={<DesignerAbout />} />
+            </Route>
+          </Route>
+          
         </Routes>
       </BrowserRouter>
     </>

@@ -10,11 +10,13 @@ export const Btn_3 = ({text,animation,clickable, position})=>{
         if(animation){
             return `btn__animated--${animation}`
         }
+        return ""
     }
     const handlePosition=()=>{
         if(position){
             return position
         }
+        return ""
     }
     return(
         <NavLink className={`btn btn_3 ${handleAnimation()} ${handleClickAnimation()} ${handlePosition()}`} to="#">{text}</NavLink>
