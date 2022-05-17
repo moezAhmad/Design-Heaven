@@ -1,9 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { solid, regular, brands } from '@fortawesome/fontawesome-svg-core/import.macro'
 import React from "react";
-import "../../App.scss"
-import { Btn_3 } from "../buttons/btn_3/btn_3.component";
-import { HeadingSecondary } from "../heading-secondary/heading-secondary.component";
+import "../../../../App.scss"
+import { Btn_3 } from "../../../buttons/btn_3/btn_3.component";
+import { HeadingSecondary } from "../../../heading-secondary/heading-secondary.component";
 export const DesignerProfileHeader = ({ designer }) => {
     return (
         <div>

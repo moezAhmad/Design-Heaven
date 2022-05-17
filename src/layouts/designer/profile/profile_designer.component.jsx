@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import "../../../App.scss"
-import { DesignerProfileHeader } from "../../../components/header_designer_profile/header_designer_profile.component";
+import { DesignerProfileHeader } from "../../../components/designer_components/header/header_designer_profile/header_designer_profile.component";
 import { Btn_4 } from "../../../components/buttons/btn_4/btn_4.component";
-import { CardList } from "../../../components/card-list/card-list.component";
 import { Outlet } from "react-router-dom";
 import { data1, data2, data3 } from "./designsData";
 const { faker } = require('@faker-js/faker');

@@ -1,5 +1,5 @@
 import React from "react";
-import "../../App.scss"
+import "../../../App.scss"
 import { ExtraNotes } from "./extranotes.component";
 import { Inspirations } from "./inspirations.component";
 
