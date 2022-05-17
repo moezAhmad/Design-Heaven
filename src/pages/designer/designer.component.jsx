@@ -1,16 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import '../../App.scss'
 import { ProfileHeader } from "../../layouts/profile_header/profile_header.component";
 import { Outlet } from "react-router-dom";
-export class DesignerPage extends React.Component{
+export const DesignerPage = () => {
+    const [compDetails, setCompDetails] = useState([])
 
-    render(){
-        return(
-            <div>
-                <ProfileHeader/>
-                <Outlet />
-            </div>
-        )
-    }
-    
+    return (
+        <div>
+            <ProfileHeader />
+            <Outlet context={[compDetails, setCompDetails]}/>
+        </div>
+    )
+
+
 }

@@ -14,6 +14,7 @@ import { DashboardDesigner } from "./layouts/designer/dashboard/dashboard_design
 import { ProfileDesigner } from "./layouts/designer/profile/profile_designer.component";
 import { DesignsContainer } from "./components/designs_container/designs_container.component";
 import { DesignerAbout } from "./components/designer_about/designer_about.component";
+import { CompetitionDetails } from "./layouts/competition_details/_competition_details.component";
 function App() {
   return (
     <>
@@ -32,7 +33,7 @@ function App() {
           <Route path="/afterLogandSign" element={< AfterLogandSign />} />
           <Route path="designer" element={<DesignerPage />}>
             <Route path="dashboard" element={<DashboardDesigner />} />
-            <Route path="competition" element={<DashboardDesigner />} />
+            <Route path="competition" element={<CompetitionDetails />} />
             <Route path="profile" element={<ProfileDesigner />}>
               <Route path="current" element={<DesignsContainer />} />
               <Route path="past" element={<DesignsContainer />} />

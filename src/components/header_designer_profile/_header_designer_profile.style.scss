@@ -2,8 +2,9 @@
     background-color: $color-gray-light-2;
     &__container{
         position: relative;
-        background-size: contain;
-        background-position: center;
+        background-size: cover;
+        background-position: top;
+        background-repeat: no-repeat;
         border-radius: .5rem;
         margin: 0 auto;
         width: 85%;

@@ -8,11 +8,14 @@ export const Btn_4 = ({ text, animation, margin, routeTo, selected, extendedClas
             if(e.target.text ==="Current"){
                 selected(1)
             }
-            if(e.target.text ==="Past"){
+            else if(e.target.text ==="Past"){
                 selected(2)
             }
-            if(e.target.text ==="About"){
+            else if(e.target.text ==="About"){
                 selected(3)
+            }
+            else{
+                selected()
             }
         }
     }
