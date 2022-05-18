@@ -15,6 +15,7 @@ import { Profile } from "./layouts/profile/profile.component";
 import { DesignsContainer } from "./components/designs_container/designs_container.component";
 import { DesignerCompetitionDetails } from "./layouts/designer/competition_details/_competition_details.component";
 import { DesignerAbout } from "./layouts/designer/designer_about/designer_about.component"
+import { NewCompetition } from "./layouts/client/new_competition/new_competition.component";
 function App() {
   return (
     <>
@@ -49,6 +50,7 @@ function App() {
               <Route path="past" element={<DesignsContainer />} />
               <Route path="about" element={<DesignerAbout />} />
             </Route>
+            <Route path="new_competition" element={<NewCompetition />} />
             <Route path="dashboard" element={<Profile />}>
               <Route path="current" element={<DesignsContainer />} />
               <Route path="past" element={<DesignsContainer />} />
