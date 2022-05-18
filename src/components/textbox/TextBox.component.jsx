@@ -10,10 +10,10 @@ export const TextBox = () => {
             <img src="./" className="text-box__logo u-margin-bottom-small" alt="logo"></img>
             <HeadingPrimary mainText="Get your dream" subText="design job done!" />
             <div>
-                <Btn_1 text="Hire a designer" animation="1" />
+                <Btn_1 text="Hire a designer" extendedStyle={`btn_1--green btn__animated--1`}/>
             </div>
             <div>
-                <Btn_2 text="Apply as a designer" animation="2" />
+                <Btn_2 text="Apply as a designer" extendedStyle={`btn_2--white btn__animated--2`}/>
             </div>
 
         </div>

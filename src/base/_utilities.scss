@@ -47,6 +47,14 @@
     padding: .4rem 0;
 }
 
+
+
+.u-space-between{
+    &:not(:last-child){
+        margin-right: 1rem;
+    }
+}
+
 .text {
     font-size: 1.4rem; 
     &__key {

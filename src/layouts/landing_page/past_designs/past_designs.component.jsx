@@ -21,8 +21,11 @@ export class PastDesigns extends React.Component {
   render() {
     return (
       <div className="landing__past_designs">
-        <HeadingSecondary text="Past Winning Designs" font_modifier="1" color_modifier="white" position="testimonials-past-format" />
-        <CardList designs={this.state.designs} colorModifier = "white" hoverEffect= {1}/>
+        <HeadingSecondary
+          text="Past Winning Designs"
+          extendedStyle={`heading-secondary--white heading-secondary--1`}
+          position="testimonials-past-format" />
+        <CardList designs={this.state.designs} extendedStyle={`white card-list--hoverEffect`} />
       </div>
 
     )

@@ -7,6 +7,6 @@ export const DesignsContainer = () => {
     const [designs,setDesigns] = useOutletContext()
 
     return (
-        <CardList designs={designs} colorModifier="black" hoverEffect={1} />
+        <CardList designs={designs} extendedStyle={`black card-list--hoverEffect`} />
     )
 }

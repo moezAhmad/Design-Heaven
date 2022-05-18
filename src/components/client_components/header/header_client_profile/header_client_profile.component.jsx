@@ -8,9 +8,12 @@ export const ClientProfileHeader = ({ client }) => {
         <div className="profile--client__header__container">
             <img src={client.profilePic} alt="profile pic" className="profile--client__header__container__profile" />
             <div>
-                <HeadingSecondary text={client.name} font_modifier="1" color_modifier="black" position="" />
+                <HeadingSecondary
+                    text={client.name}
+                    extendedStyle={`heading-secondary--black heading-secondary--1`}
+                    />
                 <div>
-                    <Btn_5 text="Start a New Competition" animation="1" />
+                    <Btn_5 text="Start a New Competition" extendedStyle={`btn_5--black btn__animated--2`} />
                 </div>
             </div>
         </div>

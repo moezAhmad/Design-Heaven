@@ -1,10 +1,43 @@
 import React from "react";
 import "../../App.scss"
 
-export const HeadingSecondary = ({ text, color_modifier,font_modifier, position}) => {
+export const HeadingSecondary = ({ text, extendedStyle, onClick, to, position }) => {
+    const handleExtendedStyle = () => {
+        if (extendedStyle) {
+            return `${extendedStyle}`
+        }
+        return ""
+    }
+    const handleOnClick = () => {
+        if (onClick) {
+            return onClick()
+        }
+        else {
+            return ""
+        }
+    }
+    const handleTo = () => {
+        if (to) {
+            return `${to}`
+        }
+        else {
+            return ""
+        }
+    }
+    const handlePosition = () => {
+        if (position) {
+            return `${position}`
+        }
+        else {
+            return ""
+        }
+    }
     return (
-        <div className={`${position} u-margin-bottom-small`}>
-            <h2 className={`heading-secondary heading-secondary--${font_modifier} heading-secondary--${color_modifier}`}>
+        <div
+            className={`${handlePosition()} u-margin-bottom-small`}
+            onClick={handleOnClick}
+        >
+            <h2 className={`heading-secondary ${handleExtendedStyle()}`}>
                 {text}
             </h2>
         </div>

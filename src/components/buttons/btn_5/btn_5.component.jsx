@@ -2,29 +2,34 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "../../../App.scss";
 
-export const Btn_5 = ({ text, animation, routeTo, extendedClass})=>{
-    const handleAnimation = ()=>{
-        if(animation){
-            return `btn__animated--${animation}`
+export const Btn_5 = ({text,extendedStyle, onClick, to})=>{
+    const handleExtendedStyle = ()=>{
+        if(extendedStyle){
+            return `${extendedStyle}`
         }
         return ""
     }
-    const handleRouteTo = ()=>{
-        if(routeTo){
-            return routeTo
+    const handleOnClick = ()=>{
+        if(onClick){
+            return onClick()
         }
-        return ""
+        else{
+            return ""
+        }
     }
-    const handleExtendedClass = ()=>{
-        if(extendedClass){
-            return extendedClass
+    const handleTo =()=>{
+        if(to){
+            return `${to}`
         }
-        return ""
+        else{
+            return ""
+        }
     }
     return(
         <NavLink
-            className={`btn btn_5 ${handleAnimation()}  ${handleExtendedClass()}`}
-            to={handleRouteTo()}
+            className={`btn btn_5 ${handleExtendedStyle()}`}
+            to={handleTo()}
+            onClick={handleOnClick}
         >
             {text}
         </NavLink>

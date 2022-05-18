@@ -3,16 +3,14 @@
     border-radius: 1rem;
     font-size: $default-font-size;
     padding: 1.5rem 4rem;
-    &--primary{
+    &--white{
         color: $color-white;
         font-weight: 500;
+        &:hover{
+            color: $color-black;    
+        }
     }
-    &:hover{
-        color: $color-black;
-        
-        
-        
-    }
+    
     &:active{
         
     }

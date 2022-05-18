@@ -11,11 +11,11 @@ import SignUpPage from "./layouts/Accounts/Signup";
 import { AccountPage } from "./pages/Account.component";
 import { DesignerPage } from "./pages/designer/designer.component";
 import { DashboardDesigner } from "./layouts/designer/dashboard/dashboard_designer.component";
-import { Profile } from "./layouts/profile/profile_designer.component";
+import { Profile } from "./layouts/profile/profile.component";
 import { DesignsContainer } from "./components/designs_container/designs_container.component";
-import { DesignerAbout } from "./components/designer_about/designer_about.component";
 import { DesignerCompetitionDetails } from "./layouts/designer/competition_details/_competition_details.component";
 import { ClientPage } from "./pages/client/client.component";
+import {DesignerAbout} from "./layouts/designer/designer_about/designer_about.component"
 function App() {
   return (
     <>

@@ -7,7 +7,10 @@ import { HeadingSecondary } from "../../../heading-secondary/heading-secondary.c
 export const DesignerProfileHeader = ({ designer }) => {
     return (
         <div>
-            <HeadingSecondary text={designer.name} font_modifier="1" color_modifier="black" position="testimonials-past-format" />
+            <HeadingSecondary
+                text={designer.name}
+                extendedStyle={`heading-secondary--black heading-secondary--1`}
+                position="testimonials-past-format" />
             <div className="profile--designer__header__container" style={{ backgroundImage: `url(${designer.coverPic})` }}>
                 <div
                     className="profile--designer__header__container__profile"
@@ -19,7 +22,7 @@ export const DesignerProfileHeader = ({ designer }) => {
                         size="4x"
                         className="profile--designer__header__container__profile__edit" />
                 </div>
-                <Btn_3 text="Edit Cover" animation="2" clickable={true} position="u-pos-bottom-right" />
+                <Btn_3 text="Edit Cover" extendedStyle="btn_3--green btn_3--clickable u-pos-bottom-right" />
             </div>
         </div>
     )

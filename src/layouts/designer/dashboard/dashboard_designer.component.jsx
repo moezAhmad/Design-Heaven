@@ -9,9 +9,15 @@ export class DashboardDesigner extends React.Component {
         return (
             <div className="dashboard--designer">
                 <div className="dashboard--designer__header u-margin-bottom-small">
-                    <HeadingSecondary text="Dashboard" font_modifier="1" color_modifier="black" position="testimonials-past-format" />
+                    <HeadingSecondary
+                        text="Dashboard"
+                        extendedStyle={`heading-secondary--black heading-secondary--1`}
+                        position="testimonials-past-format" />
                 </div>
-                <HeadingSecondary text="New Competitions" font_modifier="2" color_modifier="black" position="testimonials-past-format" />
+                <HeadingSecondary
+                    text="New Competitions"
+                    extendedStyle={`heading-secondary--black heading-secondary--2`}
+                    position="testimonials-past-format" />
                 <LongCardList competitions={competitions} />
             </div>
         )

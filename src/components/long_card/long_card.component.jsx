@@ -6,42 +6,50 @@ import { Btn_4 } from "../buttons/btn_4/btn_4.component";
 import { HeadingSecondary } from "../heading-secondary/heading-secondary.component";
 import { detailedCompetition } from "./designerEndDetails";
 
-export const LongCard = ({competition}) => {
+export const LongCard = ({ competition }) => {
     const [compDetails, setCompDetails] = useOutletContext()
-    
-    const setCompetitionDetails = ()=>{
+
+    const setCompetitionDetails = () => {
         setCompDetails(detailedCompetition[0])
-    } 
+    }
     return (
         <div className="card--long">
             <img src={competition.mainLogo} className="card--long__image" alt="image" />
             <div className="card--long__details">
                 <HeadingSecondary text={competition.title} font_modifier="3" color_modifier="black" position="" />
 
-                {competition.types.map(item => <Btn_3 key = {item.id}text={item.text} animation="2" clickable={false} />)}
+                {
+                    competition.types.map(item =>
+                        <Btn_3
+                            key={item.id}
+                            text={item.text}
+                            extendedStyle={`btn_3--green btn__animated--2 u-space-between`}
+                        />)
+                }
 
                 <p className="card--long__details__client">by <em>{competition.client}</em></p>
                 <p className="card--long__details__brief">{competition.details}</p>
             </div>
             <div className="card--long__status">
                 <div className="left__display u-margin-bottom-small">
-                    <i className="fa fa-clock-o text text__key" style={{fontSize:"3rem"}}></i>
+                    <i className="fa fa-clock-o text text__key" style={{ fontSize: "3rem" }}></i>
                     <p className="text text__value">{competition.hours} hours left</p>
                 </div>
                 <div className="left__display u-margin-bottom-big">
-                    <i className="fa fa-bar-chart text text__key" style={{fontSize:"3rem"}}></i>
+                    <i className="fa fa-bar-chart text text__key" style={{ fontSize: "3rem" }}></i>
                     <p className="text text__value">{competition.entries} entries</p>
                 </div>
-                <Btn_4 
-                text="Apply" animation="2" 
-                selected={setCompetitionDetails} 
-                routeTo = "/designer/competition"
+                <Btn_4
+                    text="Apply" animation="2"
+                    onClick={setCompetitionDetails}
+                    to="/designer/competition"
+                    extendedStyle={`btn_4--white btn__animated--2`}
                 />
             </div>
 
 
         </div>
     )
-    
+
 }
 

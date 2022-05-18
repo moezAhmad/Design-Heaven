@@ -8,7 +8,7 @@ export const Inspirations = ({inspirations})=>{
             return(
                 <div>
                     <p className="competition__body__condition text text__key">Inspirations: </p>
-                    <CardList designs={inspirations} colorModifier="black"/>
+                    <CardList designs={inspirations} extendedStyle={`black`}/>
                 </div>
             )
         }
