@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../App.scss"
 import { DesignerProfileHeader } from "../../components/designer_components/header/header_designer_profile/header_designer_profile.component";
 import { Btn_4 } from "../../components/buttons/btn_4/btn_4.component";
@@ -28,26 +28,26 @@ export const Profile = () => {
     
 
 
-    const setActive = (num) => {
-        if (num === 1) {
+    useEffect(() => {
+        if (location.pathname.includes("profile/current")) {
             setBtn1("btn_4--white--selected")
             setBtn2("")
             setBtn3("")
             setDesigns(data1)
         }
-        if (num === 2) {
+        if (location.pathname.includes("profile/past")) {
             setBtn1("")
             setBtn2("btn_4--white--selected")
             setBtn3("")
             setDesigns(data2)
         }
-        if (num === 3) {
+        if (location.pathname.includes("profile/about")) {
             setBtn1("")
             setBtn2("")
             setBtn3("btn_4--white--selected")
             setDesigns(data3)
         }
-    }
+    })
 
 
     return (
@@ -67,9 +67,9 @@ export const Profile = () => {
                 </div>
             }
             <div className="profile__links u-margin-bottom-medium">
-                <Btn_4 text="Current" to="current" onClick={setActive} extendedStyle={`btn_4--white btn__animated--2 ${btn1} u-space-between`} />
-                <Btn_4 text="Past" to="past" onClick={setActive} extendedStyle={`btn_4--white btn__animated--2 ${btn2} u-space-between`} />
-                <Btn_4 text="About" to="about" onClick={setActive} extendedStyle={`btn_4--white btn__animated--2 ${btn3} u-space-between`} />
+                <Btn_4 text="Current" to="current"  extendedStyle={`btn_4--white btn__animated--2 ${btn1} u-space-between`} />
+                <Btn_4 text="Past" to="past"  extendedStyle={`btn_4--white btn__animated--2 ${btn2} u-space-between`} />
+                <Btn_4 text="About" to="about" extendedStyle={`btn_4--white btn__animated--2 ${btn3} u-space-between`} />
             </div>
             <Outlet context={[designs, setDesigns]} />
 

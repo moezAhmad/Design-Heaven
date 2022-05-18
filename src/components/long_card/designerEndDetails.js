@@ -1,4 +1,4 @@
-export const detailedCompetition = [{
+export const detailedCompetition = {
     id: 1,
     mainLogo: "https://robohash.org/as11d",
     title: "Design Challenge",
@@ -34,4 +34,3 @@ export const detailedCompetition = [{
     hours: "13",
     entries: "10",
 }
-]

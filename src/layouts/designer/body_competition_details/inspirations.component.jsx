@@ -1,6 +1,6 @@
 import React from "react";
 import "../../../App.scss"
-import { CardList } from "../../../components/card-list/card-list.component";
+import { NoRouteCardList } from "../../../components/card-list/noroute_card-list.component";
 
 export const Inspirations = ({inspirations})=>{
     if(inspirations){
@@ -8,7 +8,7 @@ export const Inspirations = ({inspirations})=>{
             return(
                 <div>
                     <p className="competition__body__condition text text__key">Inspirations: </p>
-                    <CardList designs={inspirations} extendedStyle={`black`}/>
+                    <NoRouteCardList designs={inspirations} extendedStyle={`black`}/>
                 </div>
             )
         }

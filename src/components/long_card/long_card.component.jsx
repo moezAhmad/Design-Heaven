@@ -1,16 +1,17 @@
-import React from "react";
-import { useOutletContext } from "react-router-dom";
+import React, { useContext } from "react";
 import "../../App.scss"
 import { Btn_3 } from "../buttons/btn_3/btn_3.component";
 import { Btn_4 } from "../buttons/btn_4/btn_4.component";
 import { HeadingSecondary } from "../heading-secondary/heading-secondary.component";
 import { detailedCompetition } from "./designerEndDetails";
+import { CompetitionDetailsContext } from "../../pages/main.component";
 
 export const LongCard = ({ competition }) => {
-    const [compDetails, setCompDetails] = useOutletContext()
+    const {competitionDetails} = useContext(CompetitionDetailsContext)
+    const [compDetails, setCompDetails] = competitionDetails
 
     const setCompetitionDetails = () => {
-        setCompDetails(detailedCompetition[0])
+        setCompDetails(detailedCompetition)
     }
     return (
         <div className="card--long">

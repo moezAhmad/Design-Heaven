@@ -1,10 +1,12 @@
-import React from "react";
-import { useOutletContext } from "react-router-dom";
+import React, { useContext } from "react";
 import "../../../App.scss"
 import {CompetitionDetailsBody} from "../body_competition_details/body_competition_details.component";
 import {CompetitionDetailsHeader} from "../../../components/designer_components/header/header_competition_details/header_competition_details.component"
+import { CompetitionDetailsContext } from "../../../pages/main.component";
+
 export const DesignerCompetitionDetails = ()=>{
-    const [compDetails, setCompDetails] = useOutletContext({})
+    const {competitionDetails} = useContext(CompetitionDetailsContext)
+    const [compDetails, setCompDetails] = competitionDetails
     return(
         <div>
             <CompetitionDetailsHeader title = {compDetails.title}/>

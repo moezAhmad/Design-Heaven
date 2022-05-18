@@ -22,7 +22,7 @@ export const DesignerProfileHeader = ({ designer }) => {
                         size="4x"
                         className="profile--designer__header__container__profile__edit" />
                 </div>
-                <Btn_3 text="Edit Cover" extendedStyle="btn_3--green btn_3--clickable u-pos-bottom-right" />
+                <Btn_3 text="Edit Cover" extendedStyle="btn_3--green btn_3--clickable u-pos-bottom-right" to={`/designer/profile/current`}/>
             </div>
         </div>
     )

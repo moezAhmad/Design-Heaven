@@ -1,6 +1,6 @@
 import React from "react";
 import "../../../App.scss"
-import { CardList } from "../../../components/card-list/card-list.component";
+import { NoRouteCardList } from "../../../components/card-list/noroute_card-list.component";
 import { HeadingSecondary } from "../../../components/heading-secondary/heading-secondary.component";
 
 export class PastDesigns extends React.Component {
@@ -25,7 +25,7 @@ export class PastDesigns extends React.Component {
           text="Past Winning Designs"
           extendedStyle={`heading-secondary--white heading-secondary--1`}
           position="testimonials-past-format" />
-        <CardList designs={this.state.designs} extendedStyle={`white card-list--hoverEffect`} />
+        <NoRouteCardList designs={this.state.designs} extendedStyle={`white card-list--hoverEffect`} />
       </div>
 
     )

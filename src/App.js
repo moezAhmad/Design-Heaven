@@ -9,13 +9,12 @@ import SignUpPage from "./layouts/Accounts/Signup";
 
 
 import { AccountPage } from "./pages/Account.component";
-import { DesignerPage } from "./pages/designer/designer.component";
+import { MainPage } from "./pages/main.component";
 import { DashboardDesigner } from "./layouts/designer/dashboard/dashboard_designer.component";
 import { Profile } from "./layouts/profile/profile.component";
 import { DesignsContainer } from "./components/designs_container/designs_container.component";
 import { DesignerCompetitionDetails } from "./layouts/designer/competition_details/_competition_details.component";
-import { ClientPage } from "./pages/client/client.component";
-import {DesignerAbout} from "./layouts/designer/designer_about/designer_about.component"
+import { DesignerAbout } from "./layouts/designer/designer_about/designer_about.component"
 function App() {
   return (
     <>
@@ -33,7 +32,7 @@ function App() {
 
           <Route path="/afterLogandSign" element={< AfterLogandSign />} />
 
-          <Route path="designer" element={<DesignerPage />}>
+          <Route path="designer" element={<MainPage />}>
             <Route path="dashboard" element={<DashboardDesigner />} />
             <Route path="competition" element={<DesignerCompetitionDetails />} />
             <Route path="profile" element={<Profile />}>
@@ -44,7 +43,7 @@ function App() {
             <Route path="helpcenter" element={<SignUpPage />} />
           </Route>
 
-          <Route path="client" element={<ClientPage />}>
+          <Route path="client" element={<MainPage />}>
             <Route path="profile" element={<Profile />}>
               <Route path="current" element={<DesignsContainer />} />
               <Route path="past" element={<DesignsContainer />} />
@@ -56,7 +55,7 @@ function App() {
               <Route path="about" element={<DesignerAbout />} />
             </Route>
           </Route>
-          
+
         </Routes>
       </BrowserRouter>
     </>

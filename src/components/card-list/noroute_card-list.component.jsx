@@ -1,11 +1,12 @@
 import React, { useMemo, useState } from "react";
 import "../../App.scss"
 import { Card } from "../card/card.component";
+import { NoRouteCard } from "../card/noroute_card.component";
 import Pagination from "../Pagination/pagination.component";
 
 
 let PageSize = 8;
-export const CardList = ({ designs, extendedStyle }) => {
+export const NoRouteCardList = ({ designs, extendedStyle}) => {
 
     const [currentPage, setCurrentPage] = useState(1);
     const currentDesigns = useMemo(() => {
@@ -31,18 +32,17 @@ export const CardList = ({ designs, extendedStyle }) => {
         }
         return ""
     }
-
+    
     return (
         <div>
             <div className={`card-list ${handleExtendedStyle()}`}>
                 {
                     currentDesigns.map(
                         design =>
-                            <Card
+                            <NoRouteCard
                                 key={design.id}
                                 design={design}
                                 extendedStyle={hoverEffect}
-
                             />)
                 }
 
