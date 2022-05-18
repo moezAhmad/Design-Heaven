@@ -11,9 +11,13 @@ export const ClientProfileHeader = ({ client }) => {
                 <HeadingSecondary
                     text={client.name}
                     extendedStyle={`heading-secondary--black heading-secondary--1`}
-                    />
+                />
                 <div>
-                    <Btn_5 text="Start a New Competition" extendedStyle={`btn_5--black btn__animated--2`} />
+                    <Btn_5
+                        text="Start a New Competition"
+                        extendedStyle={`btn_5--black btn__animated--2`}
+                        to={`/client/new_competition`}
+                    />
                 </div>
             </div>
         </div>
