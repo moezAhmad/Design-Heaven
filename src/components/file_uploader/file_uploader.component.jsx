@@ -9,7 +9,8 @@ const FileUploader = () => {
     };
     const handleChange = event => {
         const fileUploaded = event.target.files[0];
-        console.log(fileUploaded)
+        setImg(`${URL.createObjectURL(fileUploaded)}`)
+        
     };
     return (
         <>

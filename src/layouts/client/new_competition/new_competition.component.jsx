@@ -3,19 +3,9 @@ import "../../../App.scss"
 import { DropDown } from "../../../components/dropdown/dropdown.component";
 import FileUploader from "../../../components/file_uploader/file_uploader.component";
 import { HeadingSecondary } from "../../../components/heading-secondary/heading-secondary.component";
+import { Btn_3 } from "../../../components/buttons/btn_3/btn_3.component";
 
 export const NewCompetition = () => {
-    const [ins1,setIns1] = useState("")
-    const [ins2,setIns2] = useState("")
-    const [ins3,setIns3] = useState("")
-    const [ins4,setIns4] = useState("")
-    const [ins5,setIns5] = useState("")
-
-    const handleIns1 = ()=>{
-
-    }
-
-
     return (
         <div className="dashboard--designer">
             <div className="dashboard--designer__header u-margin-bottom-small">
@@ -66,6 +56,7 @@ export const NewCompetition = () => {
                     <input type="text" className="competition__form__input" id="extranotes" />
 
                 </div>
+                <Btn_3 text='Submit Designs' extendedStyle="btn_3--green btn_3--clickable btn_3--full-width" />
 
             </form>
         </div>

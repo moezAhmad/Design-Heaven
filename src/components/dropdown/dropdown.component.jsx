@@ -42,7 +42,7 @@ export const DropDown = () => {
             placeholder="Select from dropdown"
             style={{
                 multiselectContainer: { 
-                    'width':'90%'
+                    'width':'100%'
                   },
                 chips: {
                     'backgroundColor': '#73E0A9',
