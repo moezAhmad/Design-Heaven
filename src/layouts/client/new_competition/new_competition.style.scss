@@ -7,7 +7,7 @@
     &__grid {
         display: grid;
         grid-template-columns: 2fr 1fr;
-        grid-gap: .1rem;
+        grid-gap: 5rem;
         
     }
 
@@ -23,7 +23,7 @@
         padding: 1rem 2rem;
         border-radius: .2rem;
         border: .2rem solid $color-secondary;
-        width: 90%;
+        width: 100%;
         display: block;
         transition: all .3s ease-in;
         &--brief{
