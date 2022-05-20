@@ -17,6 +17,8 @@ import { DesignerCompetitionDetails } from "./layouts/designer/competition_detai
 import { DesignerAbout } from "./layouts/designer/designer_about/designer_about.component"
 import { NewCompetition } from "./layouts/client/new_competition/new_competition.component";
 import { SubmitDesign } from "./layouts/designer/submit_design/submit_design.component";
+import { Auth } from "./pages/auth/auth.component";
+import { AuthLayout } from "./layouts/auth/auth_layout.component";
 function App() {
   return (
     <>
@@ -30,6 +32,12 @@ function App() {
             <Route path="" element={<LoginPage />} />
             <Route path="login" element={<LoginPage />} />
             <Route path="signup" element={<SignUpPage />} />
+          </Route>
+
+          <Route path="/auth" element={<Auth />}>
+            <Route path="signin" element={<AuthLayout />} />
+            <Route path="signup/client" element={<AuthLayout />} />
+            <Route path="signup/designer" element={<AuthLayout />} />
           </Route>
 
           <Route path="/afterLogandSign" element={< AfterLogandSign />} />
