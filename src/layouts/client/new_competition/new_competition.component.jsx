@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../../../App.scss"
 import { DropDown } from "../../../components/dropdown/dropdown.component";
 import FileUploader from "../../../components/file_uploader/file_uploader.component";

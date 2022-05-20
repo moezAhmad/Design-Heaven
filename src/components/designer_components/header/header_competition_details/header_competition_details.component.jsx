@@ -11,7 +11,7 @@ export const CompetitionDetailsHeader = ({ title }) => {
                     text={title}
                     extendedStyle={`heading-secondary--black heading-secondary--1`}
                 />
-                <Btn_3 text='Submit Designs' extendedStyle="btn_3--green btn_3--clickable u-pos-top-right" />
+                <Btn_3 text='Submit Designs' extendedStyle="btn_3--green btn_3--clickable u-pos-top-right" to={'/designer/submit_design'}/>
             </div>
 
         </div>
