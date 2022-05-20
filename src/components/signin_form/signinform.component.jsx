@@ -9,7 +9,7 @@ import facebook_photo from "./img/facebook-new.png"
 
 export const SigninForm = () => {
     return (
-        <div>
+        <div className="signin_container">
             <div className="signin__logo">
                 <div className="signin__logo__designer">
                     <div className="signin__logo__client">

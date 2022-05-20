@@ -29,6 +29,8 @@
 @import "./components/designer_components/header/header_competition_details/header_competition_details.style";
 @import "./components/buttons/btn_5/btn_5.style";
 @import "./components/signin_form/signin_form.style";
+@import "./components/designer_components/signup_form/signup_form.style";
+@import "./components/client_components/signup_form/signup_form.style";
 
 
 @import "./layouts/designer/designer_about/designer_about.style";
@@ -46,6 +48,7 @@
 @import "./layouts/client/new_competition/new_competition.style.scss";
 @import "./layouts//designer/submit_design/submit_design.style";
 @import "./layouts/auth/auth_layout.style";
+@import "./layouts/signup_layout/signup_layout.style";
 
 @import "./pages/landing/landing.style";
 @import "./pages/main.style";

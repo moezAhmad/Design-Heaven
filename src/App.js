@@ -36,7 +36,8 @@ function App() {
 
           <Route path="/auth" element={<Auth />}>
             <Route path="signin" element={<AuthLayout />} />
-            <Route path="signup" element={<AuthLayout />} />
+            <Route path="signup/client" element={<AuthLayout />} />
+            <Route path="signup/designer" element={<AuthLayout />} />
           </Route>
 
           <Route path="/afterLogandSign" element={< AfterLogandSign />} />
