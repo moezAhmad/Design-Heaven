@@ -25,7 +25,7 @@ export const Profile = () => {
     const [btn3, setBtn3] = useState("")
     const location = useLocation()
 
-    
+
 
 
     useEffect(() => {
@@ -52,23 +52,24 @@ export const Profile = () => {
 
     return (
         <div className="profile">
-            {
-                location.pathname.includes("designer")
-                &&
-                <div className="profile--designer__header u-margin-bottom-small">
-                    {<DesignerProfileHeader designer={designer} />}
-                </div>
-            }
-            {
-                location.pathname.includes("client")
-                &&
-                <div className="profile--designer__header u-margin-bottom-small">
-                    {<ClientProfileHeader client={client} />}
-                </div>
-            }
+            <div className="profile--designer__header u-margin-bottom-small">
+                {
+                    location.pathname.includes("designer")
+                    &&
+                    <DesignerProfileHeader designer={designer} />
+
+                }
+                {
+                    location.pathname.includes("client")
+                    &&
+                    <ClientProfileHeader client={client} />
+
+                }
+            </div>
+
             <div className="profile__links u-margin-bottom-medium">
-                <Btn_4 text="Current" to="current"  extendedStyle={`btn_4--white btn__animated--2 ${btn1} u-space-between`} />
-                <Btn_4 text="Past" to="past"  extendedStyle={`btn_4--white btn__animated--2 ${btn2} u-space-between`} />
+                <Btn_4 text="Current" to="current" extendedStyle={`btn_4--white btn__animated--2 ${btn1} u-space-between`} />
+                <Btn_4 text="Past" to="past" extendedStyle={`btn_4--white btn__animated--2 ${btn2} u-space-between`} />
                 <Btn_4 text="About" to="about" extendedStyle={`btn_4--white btn__animated--2 ${btn3} u-space-between`} />
             </div>
             <Outlet context={[designs, setDesigns]} />
