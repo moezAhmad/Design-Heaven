@@ -16,6 +16,7 @@ import { DesignsContainer } from "./components/designs_container/designs_contain
 import { DesignerCompetitionDetails } from "./layouts/designer/competition_details/_competition_details.component";
 import { DesignerAbout } from "./layouts/designer/designer_about/designer_about.component"
 import { NewCompetition } from "./layouts/client/new_competition/new_competition.component";
+import { SubmitDesign } from "./layouts/designer/submit_design/submit_design.component";
 function App() {
   return (
     <>
@@ -42,6 +43,7 @@ function App() {
               <Route path="about" element={<DesignerAbout />} />
             </Route>
             <Route path="helpcenter" element={<SignUpPage />} />
+            <Route path="submit_design" element={<SubmitDesign />} />
           </Route>
 
           <Route path="client" element={<MainPage />}>
