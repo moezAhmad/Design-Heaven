@@ -44,7 +44,8 @@ function App() {
 
           <Route path="designer" element={<MainPage />}>
             <Route path="dashboard" element={<DashboardDesigner />} />
-            <Route path="competition" element={<DesignerCompetitionDetails />} />
+            <Route path="competition/brief" element={<DesignerCompetitionDetails />} />
+            <Route path="competition/designs" element={<DesignerCompetitionDetails />} />
             <Route path="profile" element={<Profile />}>
               <Route path="current" element={<DesignsContainer />} />
               <Route path="past" element={<DesignsContainer />} />

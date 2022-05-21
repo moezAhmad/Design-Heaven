@@ -56,7 +56,7 @@ export const NewCompetition = () => {
                     <input type="text" className="competition__form__input" id="extranotes" />
 
                 </div>
-                <Btn_3 text='Submit Designs' extendedStyle="btn_3--green btn_3--clickable btn_3--full-width" />
+                <Btn_3 text='Start Competition' extendedStyle="btn_3--green btn_3--clickable btn_3--full-width" />
 
             </form>
         </div>

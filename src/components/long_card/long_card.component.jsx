@@ -43,7 +43,7 @@ export const LongCard = ({ competition }) => {
                 <Btn_4
                     text="Apply" animation="2"
                     onClick={setCompetitionDetails}
-                    to="/designer/competition"
+                    to="/designer/competition/brief"
                     extendedStyle={`btn_4--white btn__animated--2`}
                 />
             </div>
