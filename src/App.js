@@ -19,6 +19,7 @@ import { NewCompetition } from "./layouts/client/new_competition/new_competition
 import { SubmitDesign } from "./layouts/designer/submit_design/submit_design.component";
 import { Auth } from "./pages/auth/auth.component";
 import { AuthLayout } from "./layouts/auth/auth_layout.component";
+import { Winner } from "./layouts/client/winner/winner.component";
 function App() {
   return (
     <>
@@ -56,12 +57,10 @@ function App() {
           </Route>
 
           <Route path="client" element={<MainPage />}>
-            <Route path="profile" element={<Profile />}>
-              <Route path="current" element={<DesignsContainer />} />
-              <Route path="past" element={<DesignsContainer />} />
-              <Route path="about" element={<DesignerAbout />} />
-            </Route>
+            <Route path="competition/brief" element={<DesignerCompetitionDetails />} />
+            <Route path="competition/designs" element={<DesignerCompetitionDetails />} />
             <Route path="new_competition" element={<NewCompetition />} />
+            <Route path="choose_winner" element={<Winner />} />
             <Route path="dashboard" element={<Profile />}>
               <Route path="current" element={<DesignsContainer />} />
               <Route path="past" element={<DesignsContainer />} />

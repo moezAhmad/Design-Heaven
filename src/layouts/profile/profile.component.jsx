@@ -36,6 +36,7 @@ export const Profile = () => {
 
     useEffect(() => {
 
+
         setdesigner( {
             name: userEmail,
             profilePic: faker.image.avatar(),

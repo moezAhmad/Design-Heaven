@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useNavigate, } from "react-router-dom";
+import { useNavigate, useLocation} from "react-router-dom";
 import '../../App.scss'
 import { detailedCompetition } from "../long_card/designerEndDetails";
 import { CompetitionDetailsContext } from "../../pages/main.component";
@@ -8,7 +8,8 @@ import { CompetitionDetailsContext } from "../../pages/main.component";
 export const Card = ({ design, extendedStyle }) => {
     const { competitionDetails } = useContext(CompetitionDetailsContext)
     const [compDetails, setCompDetails] = competitionDetails
-    let navigate = useNavigate();
+    const navigate = useNavigate();
+    const location = useLocation()
 
     const handleExtendedStyle = () => {
         if (extendedStyle) {
@@ -19,6 +20,18 @@ export const Card = ({ design, extendedStyle }) => {
     const handleOnClick = (e) => {
         setCompDetails(detailedCompetition)
         navigate("#")
+
+//         if(location.pathname.includes("/client/competition/designs")){
+//             navigate("/client/choose_winner")
+//         }
+//         else if(location.pathname.includes("designer")){
+//             navigate("/designer/competition/brief")
+//         }
+//         else if(location.pathname.includes("client")){
+//             navigate("/client/competition/brief")
+//         }
+        
+
 
 
     }
