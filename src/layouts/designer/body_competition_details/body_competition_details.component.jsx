@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "../../../App.scss"
 import { Btn_4 } from "../../../components/buttons/btn_4/btn_4.component";
+import { CardList } from "../../../components/card-list/card-list.component";
 import { data1 } from "../../../components/card-list/designsData";
 import { NoRouteCardList } from "../../../components/card-list/noroute_card-list.component";
 import { ExtraNotes } from "./extranotes.component";
@@ -9,6 +10,7 @@ import { Inspirations } from "./inspirations.component";
 
 export const CompetitionDetailsBody = ({ details }) => {
     const location = useLocation()
+    const navigate = useNavigate()
     const [btn1, setBtn1] = useState("btn_4--white--selected")
     const [btn2, setBtn2] = useState("")
     useEffect(() => {
@@ -25,18 +27,27 @@ export const CompetitionDetailsBody = ({ details }) => {
 
         }
     })
+
+
+
+
+
     return (
         <div>
             <div className="profile__links u-padding-min">
+
                 <Btn_4
-                    text="Brief" to="/designer/competition/brief"
+                    to={location.pathname.includes("designer") ? "/designer/competition/brief" : "/client/competition/brief"}
+                    text="Brief"
                     extendedStyle={`btn_4--white btn__animated--2 ${btn1} u-space-between`}
                 />
                 <Btn_4
                     text="Designs"
-                    to="/designer/competition/designs"
+                    to={location.pathname.includes("designer") ? "/designer/competition/designs" : "/client/competition/designs"}
                     extendedStyle={`btn_4--white btn__animated--2 ${btn2} u-space-between`}
                 />
+
+
             </div>
             {
                 location.pathname.includes("brief")
@@ -80,7 +91,15 @@ export const CompetitionDetailsBody = ({ details }) => {
                 location.pathname.includes("designs")
                 &&
                 <div className="u-padding-min">
-                    <NoRouteCardList designs={data1} extendedStyle={`black`}/>
+                    {location.pathname.includes("designer")
+                        &&
+                        <NoRouteCardList designs={data1} extendedStyle={`black`} />
+                    }
+                    {location.pathname.includes("client")
+                        &&
+                        <CardList designs={data1} extendedStyle={`black`} />
+                    }
+
                 </div>
             }
 
