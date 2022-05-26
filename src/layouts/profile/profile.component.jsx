@@ -29,19 +29,19 @@ export const Profile = () => {
 
 
     useEffect(() => {
-        if (location.pathname.includes("profile/current")) {
+        if (location.pathname.includes("dashboard/current")) {
             setBtn1("btn_4--white--selected")
             setBtn2("")
             setBtn3("")
             setDesigns(data1)
         }
-        if (location.pathname.includes("profile/past")) {
+        if (location.pathname.includes("dashboard/past")) {
             setBtn1("")
             setBtn2("btn_4--white--selected")
             setBtn3("")
             setDesigns(data2)
         }
-        if (location.pathname.includes("profile/about")) {
+        if (location.pathname.includes("dashboard/about")) {
             setBtn1("")
             setBtn2("")
             setBtn3("btn_4--white--selected")

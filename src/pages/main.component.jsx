@@ -15,7 +15,7 @@ export const MainPage = () => {
             {
                 id: 3,
                 navText: 'Dashboard',
-                to: 'profile/current'
+                to: 'dashboard/current'
             },
             {
                 id: 2,
