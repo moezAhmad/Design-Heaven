@@ -54,7 +54,7 @@ export const Navbar = ({ navItems}) => {
                     <Link
                         key={navItems.logoText.id}
                         className={`btn nav--logo nav--logo--${handleColor()}`}
-                        to={navItems.logoText.to}
+                        to="/"
                     >
                         {navItems.logoText.navText.toUpperCase()}
                     </Link>

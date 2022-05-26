@@ -1,14 +1,18 @@
 import React from "react";
 import Multiselect from 'multiselect-react-dropdown';
 
-export const DropDown = () => {
+export const DropDown = (props) => {
     return (
         <Multiselect
             displayValue="key"
             onKeyPressFn={function noRefCheck() { }}
-            onRemove={function noRefCheck() { }}
+            onRemove={function noRefCheck(selectedList) {
+                props.setlogo(selectedList)
+             }}
             onSearch={function noRefCheck() { }}
-            onSelect={function noRefCheck() { }}
+            onSelect={function noRefCheck(selectedList) {
+                props.setlogo(selectedList)
+             }}
             options={[
                 {
                     cat: 'Group 1',

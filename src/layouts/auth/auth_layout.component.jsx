@@ -1,16 +1,24 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation,Navigate, useNavigate } from "react-router-dom";
 import "../../App.scss"
 import { HeadingSecondary } from "../../components/heading-secondary/heading-secondary.component";
 import { SigninForm } from "../../components/signin_form/signinform.component";
 import { SignUpLayout } from "../signup_layout/signup_layout.component";
 
+import { useAuthContext } from '../../Hooks/useAuthContext'
+
+
 export const AuthLayout = () => {
     const location = useLocation()
+    const { user, role , dispatch } = useAuthContext()
+    const navigate = useNavigate()
+
+    console.log("Role in auth layout componenet"+role)
     return (
         <div>
 
-            {
+            {   
+                !user && //user is null
                 location.pathname.includes("signin")
                 &&
                 <div>
@@ -26,6 +34,7 @@ export const AuthLayout = () => {
                 </div>
             }
             {
+                !user && //user is null
                 location.pathname.includes("signup")&&location.pathname.includes("client")
                 &&
                 <div>
@@ -42,6 +51,7 @@ export const AuthLayout = () => {
 
             }
             {
+                !user && //user is null
                 location.pathname.includes("signup")&&location.pathname.includes("designer")
                 &&
                 <div>
@@ -55,8 +65,25 @@ export const AuthLayout = () => {
                         <SignUpLayout/>
                     </div>
                 </div>
-
             }
+            
+            
+            {/* { user 
+            && role==="desginer"
+            && 
+            <div>
+                <Navigate to="/designer/dashboard"></Navigate>
+            </div>
+            }
+
+            { user 
+            && role==="client"
+            && 
+            <div>
+                <Navigate to="/client/profile/current"></Navigate>
+            </div>
+            }
+             */}
 
         </div>
     )

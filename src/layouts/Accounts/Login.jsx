@@ -23,7 +23,6 @@ export default function LoginPage() {
 
   const ClickOnSocialButton = async(provider) => {
     login(null , null ,provider)
-
    }
 
   const handleSubmit = (e) => {
@@ -31,7 +30,6 @@ export default function LoginPage() {
 
   }
 
-  // console.log(email,password)
 
   return (
     <div className="SignandLogin_main">
@@ -41,8 +39,8 @@ export default function LoginPage() {
 
 
       { !isPending && <button className="SignandLogin_butt " onClick={handleSubmit}>Login </button>}
-      { isPending && <button className="SignandLogin_butt" disabled>Loading</button> }
-      { error && <p className="Error-login">{error}</p> } 
+      { isPending && <div style={{filter: "grayscale(1)"}}><button className="SignandLogin_butt" disabled>Loading</button> </div>}
+      { error && <p className="Error-hereby">{error}</p> } 
 
       &nbsp;
       <h3>OR</h3>

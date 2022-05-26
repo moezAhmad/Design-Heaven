@@ -10,8 +10,6 @@ export const Card = ({ design, extendedStyle }) => {
     const [compDetails, setCompDetails] = competitionDetails
     let navigate = useNavigate();
 
-
-
     const handleExtendedStyle = () => {
         if (extendedStyle) {
             return `${extendedStyle}`
@@ -19,9 +17,8 @@ export const Card = ({ design, extendedStyle }) => {
         return ""
     }
     const handleOnClick = (e) => {
-        
         setCompDetails(detailedCompetition)
-        navigate("/designer/competition")
+        navigate("#")
 
 
     }
@@ -30,10 +27,10 @@ export const Card = ({ design, extendedStyle }) => {
             className={`card ${handleExtendedStyle()}`}
             onClick={e => handleOnClick(e)}
         >
-            <img className="card-image card--hoverEffect-image" src={`https://robohash.org/${design.id}?set=set2&size=180x180`} />
+            <img className="card-image card--hoverEffect-image" src={design.inspirations[0]} />
             <div className="card-text card--hoverEffect-text">
-                <h2 className="card-text--name u-margin-bottom-small">{design.name}</h2>
-                <p className="card-text--email">{design.email}</p>
+                <h2 className="card-text--name u-margin-bottom-small">{design.CompanyName}</h2>
+                <p className="card-text--email">{design.Tagline}</p>
             </div>
 
         </div>

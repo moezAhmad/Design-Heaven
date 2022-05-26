@@ -5,50 +5,120 @@ import { Btn_4 } from "../../components/buttons/btn_4/btn_4.component";
 import { Outlet, useLocation } from "react-router-dom";
 import { data1, data2, data3 } from "./designsData";
 import { ClientProfileHeader } from "../../components/client_components/header/header_client_profile/header_client_profile.component";
+import { useAuthContext } from '../../Hooks/useAuthContext'
+
+import {projectFirestore} from '../../Firebase/firebase-config'
+
+
+
 const { faker } = require('@faker-js/faker');
 
-const designer = {
-    name: faker.name.findName(),
-    profilePic: faker.image.avatar(),
-    coverPic: faker.image.imageUrl(),
-}
-const client = {
-    name: faker.name.findName(),
-    profilePic: faker.image.avatar(),
-    coverPic: faker.image.imageUrl(),
-}
-
 export const Profile = () => {
-    const [designs, setDesigns] = useState(data1)
-    const [btn1, setBtn1] = useState("btn_4--white--selected")
-    const [btn2, setBtn2] = useState("")
-    const [btn3, setBtn3] = useState("")
+    
+    
+    const { user } = useAuthContext()
+
+    
+    // const [designs, setDesigns] = useState(arrayCreated)
+    let temparray = [];
     const location = useLocation()
+    const [designs, setDesigns] = useState([])
+
+    var userEmail= "Not Loged in";
+
+    if(user){
+        userEmail = user.email
+    }
 
 
-
+    const [designer,setdesigner] = useState({})
+    const [client,setclient] = useState({})
 
     useEffect(() => {
-        if (location.pathname.includes("profile/current")) {
-            setBtn1("btn_4--white--selected")
-            setBtn2("")
-            setBtn3("")
-            setDesigns(data1)
-        }
-        if (location.pathname.includes("profile/past")) {
-            setBtn1("")
-            setBtn2("btn_4--white--selected")
-            setBtn3("")
-            setDesigns(data2)
-        }
-        if (location.pathname.includes("profile/about")) {
-            setBtn1("")
-            setBtn2("")
-            setBtn3("btn_4--white--selected")
-            setDesigns(data3)
-        }
-    })
 
+        setdesigner( {
+            name: userEmail,
+            profilePic: faker.image.avatar(),
+            coverPic: faker.image.imageUrl(),
+        })
+
+        setclient( {
+            name: userEmail,
+            profilePic: faker.image.avatar(),
+            coverPic: faker.image.imageUrl(),
+        })
+
+        var refere; 
+
+        if (location.pathname.includes("client/profile/current")){
+            refere = projectFirestore.collection("Competitions").where("creater","==",user.email).where("winner","==",false)
+        }
+        if (location.pathname.includes("client/profile/past")){
+            refere = projectFirestore.collection("Competitions").where('winner','==',true).where("creater","==",user.email)
+        }
+
+        if (location.pathname.includes("designer/profile/current")){
+            refere = projectFirestore.collection("Competitions").where('winner','==',false).where('participants','array-contains-any',[user.email])
+        }
+        if (location.pathname.includes("designer/profile/past")){
+            refere = projectFirestore.collection("Competitions").where('participants','array-contains-any',[user.email])
+        }
+
+        refere.get()
+        .then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                temparray.push(doc.data())
+            });
+        }).catch((error)=>{
+            console.log(error)
+        })
+        .then(()=>{
+            setDesigns(temparray,console.log("current designs=>" + designs))
+            temparray = []
+        })  
+    
+        
+        // if (location.pathname.includes("designer/profile/current")){
+        //     projectFirestore.collection("Competitions").where('winner','==',false).where("creater","==",user.email)
+        //     .get()
+        //     .then((querySnapshot) => {
+        //         querySnapshot.forEach((doc) => {
+        //             temparray.push(doc.data())                   
+                    
+        //         });
+        //     }).catch((error)=>{
+        //         console.log(error)
+        //     })
+        //     .then(()=>{
+        //         setDesigns(temparray,console.log("past designs=>"+  designs))
+        //         temparray = []
+        //     })
+        // }
+
+        return ()=>{
+            setDesigns([])
+        }
+    },[location])
+
+   
+    const handleBtn1 = ()=>{
+        if (location.pathname.includes("profile/current")){
+            return "btn_4--white--selected"
+        }
+        return ""
+    }
+    const handleBtn2 = ()=>{
+        if (location.pathname.includes("profile/past")){
+            return "btn_4--white--selected"
+        }
+        return ""
+    }
+    const handleBtn3 = ()=>{
+        if (location.pathname.includes("profile/about")){
+            return "btn_4--white--selected"
+        }
+        return ""
+    }
 
     return (
         <div className="profile">
@@ -57,23 +127,23 @@ export const Profile = () => {
                     location.pathname.includes("designer")
                     &&
                     <DesignerProfileHeader designer={designer} />
-
                 }
                 {
                     location.pathname.includes("client")
                     &&
                     <ClientProfileHeader client={client} />
-
                 }
             </div>
 
             <div className="profile__links u-margin-bottom-medium">
-                <Btn_4 text="Current" to="current" extendedStyle={`btn_4--white btn__animated--2 ${btn1} u-space-between`} />
-                <Btn_4 text="Past" to="past" extendedStyle={`btn_4--white btn__animated--2 ${btn2} u-space-between`} />
-                <Btn_4 text="About" to="about" extendedStyle={`btn_4--white btn__animated--2 ${btn3} u-space-between`} />
+                <Btn_4 text="Current" to="current" extendedStyle={`btn_4--white btn__animated--2 ${handleBtn1()} u-space-between`} />
+                <Btn_4 text="Past" to="past" extendedStyle={`btn_4--white btn__animated--2 ${handleBtn2()} u-space-between`} />
+                <Btn_4 text="About" to="about" extendedStyle={`btn_4--white btn__animated--2 ${handleBtn3()} u-space-between`} />
             </div>
-            <Outlet context={[designs, setDesigns]} />
+            <Outlet context={[designs,setDesigns]} />
 
         </div>
     )
+            
+
 }

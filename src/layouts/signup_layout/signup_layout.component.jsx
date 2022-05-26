@@ -18,10 +18,7 @@ export const SignUpLayout = () => {
                     location.pathname.includes("client")
                     &&
                     <div>
-                        
-                            <ClientSignupForm/>
-                        
-                        
+                        <ClientSignupForm/>
                     </div>
                 }
                 {

@@ -44,8 +44,8 @@ export default function SignUpPage() {
 
         {!isPending && <button className="SignandLogin_butt" onClick={handleSubmit}>SignUp </button>}
 
-        {isPending && <button className="SignandLogin_butt" disabled>loading</button>}
-        {error && <p className="Error-signUp">{error}</p>}
+        {isPending && <div style={{filter: "grayscale(1)"}}> <button className="SignandLogin_butt" disabled>loading</button></div>}
+        {error && <p className="Error-hereby">{error}</p>}
         {/* if there is error then print it */}
 
       </div>

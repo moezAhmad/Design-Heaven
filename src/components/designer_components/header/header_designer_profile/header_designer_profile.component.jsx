@@ -4,6 +4,9 @@ import React from "react";
 import "../../../../App.scss"
 import { Btn_3 } from "../../../buttons/btn_3/btn_3.component";
 import { HeadingSecondary } from "../../../heading-secondary/heading-secondary.component";
+
+
+
 export const DesignerProfileHeader = ({ designer }) => {
     return (
         <div>
