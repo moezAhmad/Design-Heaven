@@ -1,20 +1,21 @@
 import { useState, useEffect , useRef } from "react";
-import { projectAuth } from "../Firebase/firebase-config";
+import { storage , projectAuth } from "../Firebase/firebase-config";
 import { useAuthContext } from "./useAuthContext"
 import { useNavigate  } from "react-router-dom";
 import socialMediaAuth from '../layouts/Accounts/socialAuthentication'
 
+import {useLogout} from './useLogout'
 
 export const useLogin = () => {
 
+    const { logout} = useLogout()
     const [isCancelled, setisCancelled ] = useState(false)
     const [error ,setError] = useState(null)
     const [isPending ,setisPending] = useState(false)
     const {dispatch} = useAuthContext()
     const navigate = useNavigate();
 
-
-    const login = async (email,password, provider ) => {
+    const login = async (email,password, provider ,signinAs ) => {
         setError(null)
         setisPending(true)
 
@@ -24,20 +25,41 @@ export const useLogin = () => {
             if(email==null && password== null){
 
                 const res = await socialMediaAuth(provider)
-                dispatch({ type : 'LOGIN', payload : res})      
+                dispatch({ type : 'LOGIN', payload : [res,signinAs]})   
 
             }
-
+            
             if(provider == null){
                 const res = await projectAuth.signInWithEmailAndPassword(email,password) //logout from database
-                dispatch({ type : 'LOGIN', payload : res.user})
+                
+                //compare the display name
+                //if not matched then logout
+                console.log("res.user.displayName "+res.user.displayName)
+
+                if(res.user.displayName===signinAs){
+                    console.log("matched sigining in "+signinAs)
+                    dispatch({ type : 'LOGIN', payload : [res.user , signinAs]})
+                    
+                }
+                else{
+                    console.log(signinAs)
+                
+                    var str = "This account is not registered as "+ signinAs + " Please register first"
+                    logout()
+                    throw new Error( str )
+                }
                 
             }
             // logout from our global state of program
             if(!isCancelled){
                 setisPending(false)
                 setError(null)
-                navigate("/afterLogandSign");
+                if(signinAs==='client'){
+                    navigate("/client/profile/current")
+                }
+                if(signinAs==='designer'){
+                    navigate("/designer/dashboard")
+                }
             }
 
         } catch (err) {

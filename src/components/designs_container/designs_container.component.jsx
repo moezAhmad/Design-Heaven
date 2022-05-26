@@ -3,10 +3,20 @@ import { useOutletContext } from "react-router-dom";
 import "../../App.scss"
 import { CardList } from "../card-list/card-list.component";
 
+
+
+
 export const DesignsContainer = () => {
+
+
     const [designs,setDesigns] = useOutletContext()
 
     return (
-        <CardList designs={designs} extendedStyle={`black card-list--hoverEffect`}/>
+        <>
+        {designs.length===0 && <div>Loading</div>}
+        {designs.length!==0 &&<CardList designs={designs} extendedStyle={`black card-list--hoverEffect`}/>}
+        </>
+        
     )
+
 }

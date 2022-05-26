@@ -50,6 +50,12 @@
         &:focus:invalid{
             border-bottom: .3rem solid $color-primary;
         }
+        & .Error-login{
+            margin-top: 10px ;
+            padding: 4px;
+            border: 1px solid rgb(15, 96, 23);
+            color : red;
+          }
     }
     
     

@@ -23,22 +23,22 @@ export const LongCard = ({ competition }) => {
                     competition.types.map(item =>
                         <Btn_3
                             key={item.id}
-                            text={item.text}
+                            text={item.logotype[0]}
                             extendedStyle={`btn_3--green btn__animated--2 u-space-between`}
                         />)
                 }
 
-                <p className="card--long__details__client">by <em>{competition.client}</em></p>
-                <p className="card--long__details__brief">{competition.details}</p>
+                <p className="card--long__details__client">by <em>{competition.creater}</em></p>
+                <p className="card--long__details__brief">{competition.Brief}</p>
             </div>
             <div className="card--long__status">
                 <div className="left__display u-margin-bottom-small">
                     <i className="fa fa-clock-o text text__key" style={{ fontSize: "3rem" }}></i>
-                    <p className="text text__value">{competition.hours} hours left</p>
+                    <p className="text text__value">{competition.CompanyName} hours left</p>
                 </div>
                 <div className="left__display u-margin-bottom-big">
                     <i className="fa fa-bar-chart text text__key" style={{ fontSize: "3rem" }}></i>
-                    <p className="text text__value">{competition.entries} entries</p>
+                    <p className="text text__value">{competition.Tagline} entries</p>
                 </div>
                 <Btn_4
                     text="Apply" animation="2"

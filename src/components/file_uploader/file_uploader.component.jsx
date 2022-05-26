@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
-const FileUploader = () => {
+
+const FileUploader = (props) => {
     const hiddenFileInput = React.useRef(null);
     const [img, setImg] = useState("https://robohash.org/asdasd")
 
@@ -9,8 +10,8 @@ const FileUploader = () => {
     };
     const handleChange = event => {
         const fileUploaded = event.target.files[0];
+        props.setImagePath(prevArray => [...prevArray, fileUploaded ])
         setImg(`${URL.createObjectURL(fileUploaded)}`)
-        
     };
     return (
         <>
