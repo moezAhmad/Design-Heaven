@@ -21,7 +21,7 @@ export const DashboardDesigner = () => {
             .get()
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
-                    temparray.push(doc.data())
+                    temparray.push({...doc.data(),docid:doc.id})
                 });
             }).catch((error) => {
                 console.log(error)

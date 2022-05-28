@@ -21,15 +21,15 @@ export const Card = ({ design, extendedStyle }) => {
         setCompDetails(detailedCompetition)
         navigate("#")
 
-//         if(location.pathname.includes("/client/competition/designs")){
-//             navigate("/client/choose_winner")
-//         }
-//         else if(location.pathname.includes("designer")){
-//             navigate("/designer/competition/brief")
-//         }
-//         else if(location.pathname.includes("client")){
-//             navigate("/client/competition/brief")
-//         }
+        if(location.pathname.includes("/client/competition/designs")){
+            navigate("/client/choose_winner")
+        }
+        else if(location.pathname.includes("designer")){
+            navigate("/designer/competition/brief")
+        }
+        else if(location.pathname.includes("client")){
+            navigate("/client/competition/brief")
+        }
         
 
 
