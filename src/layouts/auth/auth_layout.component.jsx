@@ -80,7 +80,7 @@ export const AuthLayout = () => {
             && role==="client"
             && 
             <div>
-                <Navigate to="/client/profile/current"></Navigate>
+                <Navigate to="/client/designer/current"></Navigate>
             </div>
             }
              */}

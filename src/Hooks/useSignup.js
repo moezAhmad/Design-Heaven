@@ -40,7 +40,7 @@ export const useSignup = () => {
         setIsPending(false)
         setError(null)
         if (roleValue === 'client') {
-          navigate("/client/profile/current")
+          navigate("/client/designer/current")
         }
         if (roleValue === 'designer') {
           navigate("/designer/dashboard")

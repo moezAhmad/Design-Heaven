@@ -13,13 +13,12 @@ export const LongCardList = ({ competitions }) => {
         const firstPageIndex = (currentPage - 1) * PageSize;
         const lastPageIndex = firstPageIndex + PageSize;
         return competitions.slice(firstPageIndex, lastPageIndex);
-    }, [currentPage]);
-
-
+    });
+    console.log(competitions)
     return (
         <div className="long__card-list">
             {
-                currentCompetitions.map(competition => <LongCard key={competition.id} competition={competition} />)
+                currentCompetitions.map(competition => <LongCard  competition={competition} />)
             }
             <Pagination
                 className="pagination-bar"

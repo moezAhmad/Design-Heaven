@@ -1,6 +1,6 @@
 import React from "react";
 import "../../../App.scss"
-import { useEffect,useState } from "react";
+import { useEffect, useState } from "react";
 import { projectFirestore } from "../../../Firebase/firebase-config";
 import { HeadingSecondary } from "../../../components/heading-secondary/heading-secondary.component";
 import { LongCardList } from "../../../components/long_card-list/long_card-list.component";
@@ -17,43 +17,50 @@ export const DashboardDesigner = () => {
 
     useEffect(() => {
 
-        projectFirestore.collection("Competitions").where("winner","==",false)
-        .get()
-        .then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-                temparray.push(doc.data())
-            });
-        }).catch((error)=>{
-            console.log(error)
-        })
-        .then(()=>{
-            console.log(temparray)
-            setcompetitions(temparray)
-            temparray = []
-        })  
-
-        return ()=>{
-            setcompetitions([])
-        }
-    },[])
+        projectFirestore.collection("Competitions").where("winner", "==", false)
+            .get()
+            .then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    temparray.push(doc.data())
+                });
+            }).catch((error) => {
+                console.log(error)
+            })
+            .then(() => {
+                setcompetitions(temparray)
+            })
+            .then(()=>{
+                temparray = []
+            })
+    }, [])
 
     return (
-            <div className="dashboard--designer">
-                <div className="dashboard--designer__header u-margin-bottom-small">
+        <div className="dashboard--designer">
+            <div className="dashboard--designer__header u-margin-bottom-small">
+                {
+                    user
+                    &&
                     <HeadingSecondary
-                        text="Dashboard"
-                        extendedStyle={`heading-secondary--black heading-secondary--1`}
+                        text={user.email}
+                        extendedStyle={`heading-secondary--black heading-secondary--2`}
                         position="testimonials-past-format" />
-                {user&& <p>{user.email}</p>}
-                </div>
+                }
                 <HeadingSecondary
-                    text="New Competitions"
-                    extendedStyle={`heading-secondary--black heading-secondary--2`}
+                    text="Dashboard"
+                    extendedStyle={`heading-secondary--black heading-secondary--1`}
                     position="testimonials-past-format" />
-                <LongCardList competitions={competitions} />
+
+
+
             </div>
-        )
-    }
+            <HeadingSecondary
+                text="New Competitions"
+                extendedStyle={`heading-secondary--black heading-secondary--2`}
+                position="testimonials-past-format" />
+            <LongCardList competitions={competitions} />
+        </div>
+    )
+}
 
 // const competitions = [
 //     {

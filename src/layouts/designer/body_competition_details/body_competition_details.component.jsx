@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "../../../App.scss"
+import { Btn_3 } from "../../../components/buttons/btn_3/btn_3.component";
 import { Btn_4 } from "../../../components/buttons/btn_4/btn_4.component";
 import { CardList } from "../../../components/card-list/card-list.component";
 import { data1 } from "../../../components/card-list/designsData";
@@ -31,7 +32,6 @@ export const CompetitionDetailsBody = ({ details }) => {
 
 
 
-
     return (
         <div>
             <div className="profile__links u-padding-min">
@@ -57,34 +57,41 @@ export const CompetitionDetailsBody = ({ details }) => {
                         <div>
                             <div className="left__display u-margin-bottom-small">
                                 <p className="text text__key">{`Company/Organization Name:`}</p>
-                                <p className="text text__value">{details.companyName}</p>
+                                <p className="text text__value">{details.CompanyName}</p>
                             </div>
                             <div className="left__display u-margin-bottom-small">
                                 <p className="text text__key">{`Tagline:`}</p>
-                                <p className="text text__value">{details.tagLine}</p>
+                                <p className="text text__value">{details.Tagline}</p>
                             </div>
                             <div className="left__display u-margin-bottom-small">
                                 <p className="text text__key">{`Logo Type:`}</p>
-                                <p className="text text__value">{details.logoType}</p>
+                                {
+                                    details.logotype.map((item,i) =>
+                                    <Btn_3
+                                        key={i}
+                                        text={item}
+                                        extendedStyle={`btn_3--green btn__animated--2 u-space-between`}
+                                    />)
+                                }
                             </div>
                             <div>
                                 <p className="text text__key u-margin-bottom-small">{`Brief:`}</p>
-                                <p className="text text__value">{details.brief}</p>
+                                <p className="text text__value">{details.Brief}</p>
                             </div>
                         </div>
                         <div>
                             <div className="center__display u-margin-bottom-small">
                                 <i className="fa fa-clock-o text text__key" style={{ fontSize: "3rem" }}></i>
-                                <p className="text text__value">{details.hours} hours left</p>
+                                <p className="text text__value">12 hours left</p>
                             </div>
                             <div className="center__display">
                                 <i className="fa fa-bar-chart text text__key" style={{ fontSize: "3rem" }}></i>
-                                <p className="text text__value">{details.entries} entries</p>
+                                <p className="text text__value">20 entries</p>
                             </div>
                         </div>
                     </div>
                     <Inspirations inspirations={details.inspirations} />
-                    <ExtraNotes extraNotes={details.extraNotes} />
+                    <ExtraNotes extraNotes={details.Extranotes} />
                 </div>
             }
             {

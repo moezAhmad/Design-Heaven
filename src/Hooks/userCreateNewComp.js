@@ -83,7 +83,7 @@ export const useCreateNewComp = () =>{
         myPromise.then(()=>{
             console.log("inside then")
             setisPending(false)
-            navigate("/client/profile/current")
+            navigate("/client/designer/current")
 
         })
     }

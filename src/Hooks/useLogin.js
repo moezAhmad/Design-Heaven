@@ -55,7 +55,7 @@ export const useLogin = () => {
                 setisPending(false)
                 setError(null)
                 if(signinAs==='client'){
-                    navigate("/client/profile/current")
+                    navigate("/client/dashboard/current")
                 }
                 if(signinAs==='designer'){
                     navigate("/designer/dashboard")

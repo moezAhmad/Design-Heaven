@@ -9,7 +9,7 @@ export const DesignerCompetitionDetails = ()=>{
     const [compDetails, setCompDetails] = competitionDetails
     return(
         <div>
-            <CompetitionDetailsHeader title = {compDetails.title}/>
+            <CompetitionDetailsHeader title = {compDetails.creater}/>
             <CompetitionDetailsBody details = {compDetails}/>
         </div>
     )

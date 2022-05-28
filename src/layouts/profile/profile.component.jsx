@@ -51,10 +51,10 @@ export const Profile = () => {
 
         var refere; 
 
-        if (location.pathname.includes("client/profile/current")){
+        if (location.pathname.includes("client/dashboard/current")){
             refere = projectFirestore.collection("Competitions").where("creater","==",user.email).where("winner","==",false)
         }
-        if (location.pathname.includes("client/profile/past")){
+        if (location.pathname.includes("client/dashboard/past")){
             refere = projectFirestore.collection("Competitions").where('winner','==',true).where("creater","==",user.email)
         }
 
@@ -77,24 +77,6 @@ export const Profile = () => {
             setDesigns(temparray,console.log("current designs=>" + designs))
             temparray = []
         })  
-    
-        
-        // if (location.pathname.includes("designer/profile/current")){
-        //     projectFirestore.collection("Competitions").where('winner','==',false).where("creater","==",user.email)
-        //     .get()
-        //     .then((querySnapshot) => {
-        //         querySnapshot.forEach((doc) => {
-        //             temparray.push(doc.data())                   
-                    
-        //         });
-        //     }).catch((error)=>{
-        //         console.log(error)
-        //     })
-        //     .then(()=>{
-        //         setDesigns(temparray,console.log("past designs=>"+  designs))
-        //         temparray = []
-        //     })
-        // }
 
         return ()=>{
             setDesigns([])
