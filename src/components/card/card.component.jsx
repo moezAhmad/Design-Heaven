@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import { useNavigate, useLocation} from "react-router-dom";
 import '../../App.scss'
-import { detailedCompetition } from "../long_card/designerEndDetails";
 import { CompetitionDetailsContext } from "../../pages/main.component";
 
 
@@ -18,7 +17,8 @@ export const Card = ({ design, extendedStyle }) => {
         return ""
     }
     const handleOnClick = (e) => {
-        setCompDetails(detailedCompetition)
+        setCompDetails(design)
+        console.log(design)
         navigate("#")
 
         if(location.pathname.includes("/client/competition/designs")){
