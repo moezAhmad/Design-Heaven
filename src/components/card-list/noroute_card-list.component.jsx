@@ -32,7 +32,6 @@ export const NoRouteCardList = ({ designs, extendedStyle}) => {
         }
         return ""
     }
-    
     return (
         <div>
             <div className={`card-list ${handleExtendedStyle()}`}>

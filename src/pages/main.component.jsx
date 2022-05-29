@@ -7,6 +7,7 @@ export const CompetitionDetailsContext = React.createContext()
 
 export const MainPage = () => {
     const [compDetails, setCompDetails] = useState({})
+    const [winnerData, setWinnerData] = useState({})
     const location = useLocation()
     const navItemsClient = {
         color: "white",
@@ -99,7 +100,10 @@ export const MainPage = () => {
                 <ProfileHeader navItems={navItemsClient} />
             }
 
-            <CompetitionDetailsContext.Provider value={{ competitionDetails: [compDetails, setCompDetails] }}>
+            <CompetitionDetailsContext.Provider value={{
+                competitionDetails: [compDetails, setCompDetails],
+                winner: [winnerData, setWinnerData]
+            }}>
                 <Outlet />
             </CompetitionDetailsContext.Provider>
 

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "../../../App.scss"
 import { Btn_3 } from "../../../components/buttons/btn_3/btn_3.component";
@@ -9,23 +9,24 @@ import { NoRouteCardList } from "../../../components/card-list/noroute_card-list
 import { ExtraNotes } from "./extranotes.component";
 import { Inspirations } from "./inspirations.component";
 import { projectFirestore } from "../../../Firebase/firebase-config";
+import { CompetitionDetailsContext } from "../../../pages/main.component";
 
 export const CompetitionDetailsBody = ({ details }) => {
     const location = useLocation()
     const navigate = useNavigate()
-    const [btn1, setBtn1] = useState("btn_4--white--selected")
-    const [btn2, setBtn2] = useState("")
+    const { winner } = useContext(CompetitionDetailsContext)
+    const [winnerData, setWinnerData] = winner
     const [data1, setdata1] = useState([])
-    let temparray=[]
+    let temparray = []
 
     useEffect(() => {
-        
 
-        projectFirestore.collection("Competitions/"+details.docid+"/designerSubmissions").get()
+
+        projectFirestore.collection('Competitions').doc(details.docid).collection('designerSubmissions').get()
             .then((querySnapshot) => {
                 querySnapshot.forEach((doc) => {
-                    console.log(    )
-                    temparray.push({...doc.data(),subdocid:doc.id})
+                    console.log()
+                    temparray.push({ ...doc.data(), subdocid: doc.id })
                 });
             }).catch((error) => {
                 console.log(error)
@@ -34,18 +35,18 @@ export const CompetitionDetailsBody = ({ details }) => {
                 setdata1(temparray)
                 console.log(temparray)
             })
-            .then(()=>{
+            .then(() => {
                 temparray = []
             })
-    },[])
-    const handleBtn1 = ()=>{
-        if (location.pathname.includes("competition/brief")){
+    }, [])
+    const handleBtn1 = () => {
+        if (location.pathname.includes("competition/brief")) {
             return "btn_4--white--selected"
         }
         return ""
     }
-    const handleBtn2 = ()=>{
-        if (location.pathname.includes("competition/designs")){
+    const handleBtn2 = () => {
+        if (location.pathname.includes("competition/designs")) {
             return "btn_4--white--selected"
         }
         return ""
@@ -84,12 +85,12 @@ export const CompetitionDetailsBody = ({ details }) => {
                             <div className="left__display u-margin-bottom-small">
                                 <p className="text text__key">{`Logo Type:`}</p>
                                 {
-                                    details.logotype.map((item,i) =>
-                                    <Btn_3
-                                        key={i}
-                                        text={item}
-                                        extendedStyle={`btn_3--green btn__animated--2 u-space-between`}
-                                    />)
+                                    details.logotype.map((item, i) =>
+                                        <Btn_3
+                                            key={i}
+                                            text={item}
+                                            extendedStyle={`btn_3--green btn__animated--2 u-space-between`}
+                                        />)
                                 }
                             </div>
                             <div>
@@ -122,7 +123,19 @@ export const CompetitionDetailsBody = ({ details }) => {
                     }
                     {location.pathname.includes("client")
                         &&
-                        <CardList designs={data1} extendedStyle={`black`} />
+                        data1.map(subUrls => <div className="card-list">
+                            {subUrls.submissionUrls.map(img => <img className="card-image card--hoverEffect-image" src={img} onClick={() => {
+                                data1.map(data=>{
+                                    if(data.submissionUrls.includes(img)){
+                                        setWinnerData(data)
+                                        console.log(data)
+                                    }
+                                })
+                                if (location.pathname.includes("/client/competition/designs")) {
+                                    navigate("/client/choose_winner")
+                                }
+                            }} />)}
+                        </div>)
                     }
 
                 </div>

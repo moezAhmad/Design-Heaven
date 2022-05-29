@@ -21,10 +21,8 @@ export const Card = ({ design, extendedStyle }) => {
         console.log(design)
         navigate("#")
 
-        if(location.pathname.includes("/client/competition/designs")){
-            navigate("/client/choose_winner")
-        }
-        else if(location.pathname.includes("designer")){
+        
+        if(location.pathname.includes("designer")){
             navigate("/designer/competition/brief")
         }
         else if(location.pathname.includes("client")){
