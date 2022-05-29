@@ -4,34 +4,52 @@ import "../../../App.scss"
 import { Btn_3 } from "../../../components/buttons/btn_3/btn_3.component";
 import { Btn_4 } from "../../../components/buttons/btn_4/btn_4.component";
 import { CardList } from "../../../components/card-list/card-list.component";
-import { data1 } from "../../../components/card-list/designsData";
+// import { data1 } from "../../../components/card-list/designsData";
 import { NoRouteCardList } from "../../../components/card-list/noroute_card-list.component";
 import { ExtraNotes } from "./extranotes.component";
 import { Inspirations } from "./inspirations.component";
+import { projectFirestore } from "../../../Firebase/firebase-config";
 
 export const CompetitionDetailsBody = ({ details }) => {
     const location = useLocation()
     const navigate = useNavigate()
     const [btn1, setBtn1] = useState("btn_4--white--selected")
     const [btn2, setBtn2] = useState("")
+    const [data1, setdata1] = useState([])
+    let temparray=[]
+
     useEffect(() => {
-        if (location.pathname.includes("competition/brief")) {
-            setBtn1("btn_4--white--selected")
-            setBtn2("")
+        
 
-
+        projectFirestore.collection("Competitions/"+details.docid+"/designerSubmissions").get()
+            .then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    console.log(    )
+                    temparray.push({...doc.data(),subdocid:doc.id})
+                });
+            }).catch((error) => {
+                console.log(error)
+            })
+            .then(() => {
+                setdata1(temparray)
+                console.log(temparray)
+            })
+            .then(()=>{
+                temparray = []
+            })
+    },[])
+    const handleBtn1 = ()=>{
+        if (location.pathname.includes("competition/brief")){
+            return "btn_4--white--selected"
         }
-        if (location.pathname.includes("competition/designs")) {
-            setBtn1("")
-            setBtn2("btn_4--white--selected")
-
-
+        return ""
+    }
+    const handleBtn2 = ()=>{
+        if (location.pathname.includes("competition/designs")){
+            return "btn_4--white--selected"
         }
-    })
-
-
-
-
+        return ""
+    }
     return (
         <div>
             <div className="profile__links u-padding-min">
@@ -39,12 +57,12 @@ export const CompetitionDetailsBody = ({ details }) => {
                 <Btn_4
                     to={location.pathname.includes("designer") ? "/designer/competition/brief" : "/client/competition/brief"}
                     text="Brief"
-                    extendedStyle={`btn_4--white btn__animated--2 ${btn1} u-space-between`}
+                    extendedStyle={`btn_4--white btn__animated--2 ${handleBtn1()} u-space-between`}
                 />
                 <Btn_4
                     text="Designs"
                     to={location.pathname.includes("designer") ? "/designer/competition/designs" : "/client/competition/designs"}
-                    extendedStyle={`btn_4--white btn__animated--2 ${btn2} u-space-between`}
+                    extendedStyle={`btn_4--white btn__animated--2 ${handleBtn2()} u-space-between`}
                 />
 
 
