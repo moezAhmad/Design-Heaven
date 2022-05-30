@@ -1,131 +1,33 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "../../../App.scss"
 import { HeadingSecondary } from "../../../components/heading-secondary/heading-secondary.component"
 import { Btn_3 } from "../../../components/buttons/btn_3/btn_3.component"
 import { NoRouteCardList } from "../../../components/card-list/noroute_card-list.component";
 import { CompetitionDetailsContext } from "../../../pages/main.component";
-const data1 = [
-  {
-    "id": 1,
-    "name": "Leanne Graham",
-    "username": "Bret",
-    "email": "Sincere@april.biz",
-    "address": {
-      "street": "Kulas Light",
-      "suite": "Apt. 556",
-      "city": "Gwenborough",
-      "zipcode": "92998-3874",
-      "geo": {
-        "lat": "-37.3159",
-        "lng": "81.1496"
-      }
-    },
-  },
-  {
-    "id": 1,
-    "name": "Leanne Graham",
-    "username": "Bret",
-    "email": "Sincere@april.biz",
-    "address": {
-      "street": "Kulas Light",
-      "suite": "Apt. 556",
-      "city": "Gwenborough",
-      "zipcode": "92998-3874",
-      "geo": {
-        "lat": "-37.3159",
-        "lng": "81.1496"
-      }
-    },
-  },
-  {
-    "id": 1,
-    "name": "Leanne Graham",
-    "username": "Bret",
-    "email": "Sincere@april.biz",
-    "address": {
-      "street": "Kulas Light",
-      "suite": "Apt. 556",
-      "city": "Gwenborough",
-      "zipcode": "92998-3874",
-      "geo": {
-        "lat": "-37.3159",
-        "lng": "81.1496"
-      }
-    },
-  },
-  {
-    "id": 1,
-    "name": "Leanne Graham",
-    "username": "Bret",
-    "email": "Sincere@april.biz",
-    "address": {
-      "street": "Kulas Light",
-      "suite": "Apt. 556",
-      "city": "Gwenborough",
-      "zipcode": "92998-3874",
-      "geo": {
-        "lat": "-37.3159",
-        "lng": "81.1496"
-      }
-    },
-  },
-  {
-    "id": 1,
-    "name": "Leanne Graham",
-    "username": "Bret",
-    "email": "Sincere@april.biz",
-    "address": {
-      "street": "Kulas Light",
-      "suite": "Apt. 556",
-      "city": "Gwenborough",
-      "zipcode": "92998-3874",
-      "geo": {
-        "lat": "-37.3159",
-        "lng": "81.1496"
-      }
-    },
-  },
-  {
-    "id": 1,
-    "name": "Leanne Graham",
-    "username": "Bret",
-    "email": "Sincere@april.biz",
-    "address": {
-      "street": "Kulas Light",
-      "suite": "Apt. 556",
-      "city": "Gwenborough",
-      "zipcode": "92998-3874",
-      "geo": {
-        "lat": "-37.3159",
-        "lng": "81.1496"
-      }
-    },
-  },
-  {
-    "id": 1,
-    "name": "Leanne Graham",
-    "username": "Bret",
-    "email": "Sincere@april.biz",
-    "address": {
-      "street": "Kulas Light",
-      "suite": "Apt. 556",
-      "city": "Gwenborough",
-      "zipcode": "92998-3874",
-      "geo": {
-        "lat": "-37.3159",
-        "lng": "81.1496"
-      }
-    },
-  },
-
-]
+import { projectFirestore } from "../../../Firebase/firebase-config";
 
 export const Winner = () => {
   const { winner } = useContext(CompetitionDetailsContext)
   const [winnerData, setWinnerData] = winner
   const { competitionDetails } = useContext(CompetitionDetailsContext)
   const [compDetails, setCompDetails] = competitionDetails
-  console.log(winner)
+  const [isPending, setisPending] = useState(false)
+  const handlewinner = () =>{
+    
+    setisPending(true)
+
+    projectFirestore.collection("Competitions").doc(competitionDetails[0].docid).update({
+        winner : true,
+        winnerName : winner[0].submittor
+
+      })
+    console.log(winner)
+    console.log(competitionDetails[0].docid)
+    console.log(winner[0].submittor)
+
+    console.log(competitionDetails)
+    
+  }
   return (
     <div>
       <div className="dashboard--designer__header u-margin-bottom-small">
@@ -142,7 +44,8 @@ export const Winner = () => {
         <div>
           <p className="winner__grid__brief u-margin-bottom-small">Brief</p>
           <div className="winner__grid__brief__text">{`${winner[0].Brief}`}</div>
-          <Btn_3 text='Select Winner' extendedStyle="btn_3--green btn_3--clickable u-margin-top-small" />
+          {!isPending && <Btn_3 text='Select Winner' onClick={handlewinner} to= "#" extendedStyle="btn_3--green btn_3--clickable u-margin-top-small" />}
+          {isPending && <div style={{filter: "grayscale(1)"}}><Btn_3 text=' Wait! ' extendedStyle="btn_3--green btn_3--clickable u-margin-top-small" /></div>}
         </div>
       </div>
 

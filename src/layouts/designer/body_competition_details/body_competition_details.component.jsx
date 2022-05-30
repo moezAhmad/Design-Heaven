@@ -119,7 +119,9 @@ export const CompetitionDetailsBody = ({ details }) => {
                 <div className="u-padding-min">
                     {location.pathname.includes("designer")
                         &&
-                        <NoRouteCardList designs={data1} extendedStyle={`black`} />
+                        data1.map(subUrls => <div className="card-list">
+                            {subUrls.submissionUrls.map(img => <img className="card-image card--hoverEffect-image" src={img}/>)}
+                        </div>)
                     }
                     {location.pathname.includes("client")
                         &&

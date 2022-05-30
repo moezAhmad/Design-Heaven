@@ -13,7 +13,7 @@ export const DesignsContainer = () => {
 
     return (
         <>
-        {designs.length===0 && <div>Loading</div>}
+        
         {designs.length!==0 &&<CardList designs={designs} extendedStyle={`black card-list--hoverEffect`}/>}
         </>
         

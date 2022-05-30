@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "../../App.scss";
+import { useLogout } from "../../Hooks/useLogout";
+import { BrowserRouter, Route, Link, Outlet, NavLink, useLocation } from "react-router-dom";
 
-import { BrowserRouter, Route, Link, Outlet, NavLink } from "react-router-dom";
-
-export const Navbar = ({ navItems}) => {
+export const Navbar = ({ navItems }) => {
+    const {logout} = useLogout()
+    const location = useLocation()
     const handleColor = () => {
         return navItems.color === "white" ? "white" : "black"
     }
@@ -50,14 +52,20 @@ export const Navbar = ({ navItems}) => {
                         )
                     }
                     )}
+                    
+                    {
+                        (location.pathname.includes("client") || location.pathname.includes("designer"))
+                        &&
+                        <Link
+                            key={navItems.logoText.id}
+                            className={`btn nav--logo nav--logo--${handleColor()}`}
+                            to="#"
+                            onClick={logout}
+                        >
+                            Sign Out
+                        </Link>
+                    }
 
-                    <Link
-                        key={navItems.logoText.id}
-                        className={`btn nav--logo nav--logo--${handleColor()}`}
-                        to="/"
-                    >
-                        {navItems.logoText.navText.toUpperCase()}
-                    </Link>
                 </div>
 
             </nav>

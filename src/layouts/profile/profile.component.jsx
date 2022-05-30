@@ -62,7 +62,7 @@ export const Profile = () => {
             refere = projectFirestore.collection("Competitions").where('winner','==',false).where('participants','array-contains-any',[user.email])
         }
         if (location.pathname.includes("designer/profile/past")){
-            refere = projectFirestore.collection("Competitions").where('participants','array-contains-any',[user.email])
+            refere = projectFirestore.collection("Competitions").where('participants','array-contains-any',[user.email]).where("winner","==",true)
         }
 
         refere.get()
@@ -121,7 +121,6 @@ export const Profile = () => {
             <div className="profile__links u-margin-bottom-medium">
                 <Btn_4 text="Current" to="current" extendedStyle={`btn_4--white btn__animated--2 ${handleBtn1()} u-space-between`} />
                 <Btn_4 text="Past" to="past" extendedStyle={`btn_4--white btn__animated--2 ${handleBtn2()} u-space-between`} />
-                <Btn_4 text="About" to="about" extendedStyle={`btn_4--white btn__animated--2 ${handleBtn3()} u-space-between`} />
             </div>
             <Outlet context={[designs,setDesigns]} />
 

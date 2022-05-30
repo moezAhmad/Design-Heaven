@@ -44,7 +44,7 @@ export const SigninForm = () => {
     return (
         <div className="signin_container">
             <div className="signin__logo">
-                
+
                 <div className="signin__logo__designer">
                     <div className="signin__logo__client">
                         Client
@@ -55,7 +55,7 @@ export const SigninForm = () => {
             <form className="signin__form" onSubmit={e => preventRefresh(e)}>
                 <div className="signin__form__group">
                     <label htmlFor="email" className="signin__form__label">Email</label>
-                    <input type="email" className="signin__form__input" id="email" required  onChange={(e) => setemail(e.target.value)} />
+                    <input type="email" className="signin__form__input" id="email" required onChange={(e) => setemail(e.target.value)} />
 
                 </div>
                 <div className="signin__form__group">
@@ -65,17 +65,22 @@ export const SigninForm = () => {
                 </div>
                 <div className="signin__form__grid">
                     <div>
-                        <input type="radio" value="designer" id="designer" name="type" onChange={onchangestatus}/>
-                        <label htmlFor="designer" className="signin__form__label">Designer</label>
-                        <input type="radio" value="client" id="client" name="type" onChange={onchangestatus}/>
-                        <label htmlFor="client" className="signin__form__label">Client</label>
+                        <div style={{display:"inline-block", marginRight:'2rem'}}>
+                            <input style={{display:"inline", marginRight:'.5rem' }} type="radio" value="designer" id="designer" name="type" onChange={onchangestatus} />
+                            <label style={{display:"inline-block"}} htmlFor="designer" className="signin__form__label">Designer</label>
+                        </div>
+                        <div style={{display:"inline-block"}}>
+                            <input style={{display:"inline", marginRight:'.5rem'}} type="radio" value="client" id="client" name="type" onChange={onchangestatus} />
+                            <label style={{display:"inline-block"}} htmlFor="client" className="signin__form__label">Client</label>
+                        </div>
+
                     </div>
 
 
 
 
-                    {!isPending && <div onClick={e => handleSubmit(e)}> <Btn_3 text='Sign In' to="#" extendedStyle="btn_3--green btn_3--clickable btn__animated--2" /> </div>}
-                    {isPending && <div style={{ filter: "grayscale(1)" }}><Btn_3 text='Signing In Wait' extendedStyle="btn_3--green btn__animated--2" disabled /></div>}
+                    {!isPending && <div onClick={e => handleSubmit(e)}> <Btn_3 text='Sign In' to="#" extendedStyle="full-width btn_3--green btn_3--clickable btn__animated--2" /> </div>}
+                    {isPending && <div style={{ filter: "grayscale(1)" }}><Btn_3 text='Signing In Wait' extendedStyle="full-width btn_3--green btn__animated--2" disabled /></div>}
 
                 </div>
 

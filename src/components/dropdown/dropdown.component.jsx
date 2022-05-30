@@ -16,31 +16,31 @@ export const DropDown = (props) => {
             options={[
                 {
                     cat: 'Group 1',
-                    key: 'Option 1'
+                    key: 'Logo Design'
                 },
                 {
                     cat: 'Group 1',
-                    key: 'Option 2'
+                    key: `Ads Design`
                 },
                 {
                     cat: 'Group 1',
-                    key: 'Option 3'
+                    key: 'Illustration'
                 },
                 {
                     cat: 'Group 2',
-                    key: 'Option 4'
+                    key: 'Publication'
                 },
                 {
                     cat: 'Group 2',
-                    key: 'Option 5'
+                    key: 'Typography'
                 },
                 {
                     cat: 'Group 2',
-                    key: 'Option 6'
+                    key: 'Prototype'
                 },
                 {
                     cat: 'Group 2',
-                    key: 'Option 7'
+                    key: 'Art Design'
                 }
             ]}
             placeholder="Select from dropdown"
@@ -71,7 +71,7 @@ export const DropDown = (props) => {
                     'color': '#000000',
                 },
             }}
-            selectionLimit={4}
+            selectionLimit={3}
             showArrow={true}
         />
     )

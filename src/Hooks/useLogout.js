@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { projectAuth } from "../Firebase/firebase-config";
 import {useAuthContext} from "./useAuthContext"
 
 export const useLogout = () => {
-
+    const navigate = useNavigate()
     const [isCancelled, setisCancelled ] = useState(false)
     const [error ,setError] = useState(null)
     const [isPending ,setisPending] = useState(false)
@@ -12,7 +13,7 @@ export const useLogout = () => {
     const logout = async () => {
         setError(null)
         setisPending(true)
-
+        console.log("logout")
         //Sign the user out
         try {
             await projectAuth.signOut() //logout from database
@@ -33,6 +34,8 @@ export const useLogout = () => {
                 setError(err.message)
                 setisPending(false)
             }
+        }finally{
+            navigate("/")
         }
         
     }

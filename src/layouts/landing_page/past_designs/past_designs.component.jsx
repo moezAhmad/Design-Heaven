@@ -2,6 +2,7 @@ import React from "react";
 import "../../../App.scss"
 import { NoRouteCardList } from "../../../components/card-list/noroute_card-list.component";
 import { HeadingSecondary } from "../../../components/heading-secondary/heading-secondary.component";
+import { data1 } from "../../profile/designsData";
 
 export class PastDesigns extends React.Component {
   constructor() {
@@ -25,7 +26,19 @@ export class PastDesigns extends React.Component {
           text="Past Winning Designs"
           extendedStyle={`heading-secondary--white heading-secondary--1`}
           position="testimonials-past-format" />
-        <NoRouteCardList designs={this.state.designs} extendedStyle={`white card-list--hoverEffect`} />
+        <div className="card-list card-list--hoverEffect">
+          {this.state.designs.map(design => (
+
+            <div className="card card--hoverEffect">
+              <img className="card-image card--hoverEffect-image" src={`https://robohash.org/${design.id}asdasd`} />
+              <div className="card-text card--hoverEffect-text">
+                <h2 className="card-text--name u-margin-bottom-small">{design.name}</h2>
+                <p className="card-text--email">{design.email}</p>
+              </div>
+            </div>
+
+          ))}
+        </div>
       </div>
 
     )

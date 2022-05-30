@@ -53,7 +53,6 @@ export class LandingHeader extends React.Component {
     render(){
         return (
             <div className="landing__header">
-                <Navbar navItems={navItems} />
                 <Outlet/>
                 <TextBox />
             </div>

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext,useLocation } from "react";
 import { useNavigate, } from "react-router-dom";
 import '../../App.scss'
 import { detailedCompetition } from "../long_card/designerEndDetails";
