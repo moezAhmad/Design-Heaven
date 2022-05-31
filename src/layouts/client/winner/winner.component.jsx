@@ -45,7 +45,7 @@ export const Winner = () => {
           <p className="winner__grid__brief u-margin-bottom-small">Brief</p>
           <div className="winner__grid__brief__text">{`${winner[0].Brief}`}</div>
           {!isPending && <Btn_3 text='Select Winner' onClick={handlewinner} to= "#" extendedStyle="btn_3--green btn_3--clickable u-margin-top-small" />}
-          {isPending && <div style={{filter: "grayscale(1)"}}><Btn_3 text=' Wait! ' extendedStyle="btn_3--green btn_3--clickable u-margin-top-small" /></div>}
+          
         </div>
       </div>
 

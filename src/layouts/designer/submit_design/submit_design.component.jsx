@@ -57,7 +57,7 @@ export const SubmitDesign = () => {
                         {!isPending &&<Btn_3 text='Submit Designs' to="#" onClick={handleSubmit} extendedStyle="btn_3--green btn_3--clickable u-margin-top-small" /> }
 
                         {isPending && <div style={{filter: "grayscale(1)"}}> 
-                        <Btn_3 text='!! Submiting !!' extendedStyle="btn_3--green btn_3--clickable u-margin-top-small" />
+                        <Btn_3 text='Submiting' extendedStyle="btn_3--green btn_3--clickable u-margin-top-small" />
                         </div>} 
                     
                     </div>

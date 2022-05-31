@@ -45,7 +45,7 @@ export const useLogin = () => {
                     console.log(signinAs)
                 
                     var str = "This account is not registered as "+ signinAs + " Please register first"
-                    logout()
+                    // logout()
                     throw new Error( str )
                 }
                 
